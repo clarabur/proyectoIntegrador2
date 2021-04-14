@@ -1,8 +1,13 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  font-family: 'Mulish', sans-serif;
+}
+.products-title{
+  font-family: 'Raleway', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.product-box_data h2{
+  font-family: 'Abel', sans-serif;
 }
+
+
+
