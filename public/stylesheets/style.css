@@ -11,4 +11,19 @@ body{
 }
 
 
+.main-header{
+  background-color: black;
+}
 
+.main-navbar a{
+  color: white
+}
+
+.main-header_credit-link{
+  color: white
+}
+
+.footer-data i{
+  color: grey;
+
+}
