@@ -83,11 +83,26 @@ body{
   font-size: 0.95em;
 }
 
+.login .categoria {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  color: #555;
+  border-color: #888;
+}
+
 .login input[type="email"],
 .login input[type="password"] {
   background: #fff;
   border-color: #bbb;
   color: #555;
+  border-color: #888;
 }
 
 /* Text fields' focus effect */
@@ -112,7 +127,52 @@ body{
   border-color: #05a;
 }
 
+.login input[type="file"] {
+  background: rgb(255, 255, 255);
+  border-color: #888;
+
+}
+
 .fondo{ 
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.Agregar {
+  background: rgb(23, 28, 75);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+
+.Agregar button[type="submit"] {
+  background: rgb(32, 110, 21);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.Agregar button[type="submit"]:hover {
+  background: rgb(144, 196, 120);
+}
+
+.Agregar button{
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 1.5em;
+  border-radius: 40px;
+}
+
+.Agregar i{
+ font-style: normal;
+ margin-left: 5px;
 }
