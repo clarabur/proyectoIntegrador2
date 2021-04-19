@@ -4,6 +4,8 @@ let products =[
         nombre: "blazer negro",
         id: 1,
         imagen:"/images/products/bazer.jpeg",
+        descripcion:"Jean oversize blanco tiro alto",
+        comentarios:"Comentarios: 4",
 
     },
     {
