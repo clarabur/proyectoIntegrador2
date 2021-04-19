@@ -3,7 +3,7 @@
 <!-- Include Head -->
 <%-include("./partials/head.ejs")%>
 
-<body>
+<body background="/images/fondoregister1.jpeg" class="fondo">
 	
 	<!-- Header -->
 	<%-include("./partials/header.ejs")%>
@@ -11,24 +11,26 @@
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
+		
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title title">Ingresar</h2>
-			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<input type="text" name="usuario" maxlength="6" value="Usuario"/><br />
-
-				<input type="text" name="contraseña" minlength="6" value="Contraseña"/><br />
-
-				<button type="submit">
-
-					<b><a href="/profile">
-						<i>Iniciar Sesión </i>
-					</a></b> <br/>
-			   </button>
+				
+				<div class="login">
+					<div class="login-triangle"></div>
+					
+					<h2 class="login-header">INICIAR SESION</h2>
+				  
+					<form class="login-container">
+					  <p><input type="email" placeholder="Usuario"></p>
+					  <p><input type="password" placeholder="Contraseña"></p>
+					  <p><input type="submit" value="ACEPTAR"></p>
+					</form>
+				  </div>
+				</div>
 			</h2>
-
+		</div>
+	</div>
 
 	<!-- footer -->
 	<%-include("./partials/footer.ejs")%>

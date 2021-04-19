@@ -4,7 +4,7 @@
 
 <%-include("./partials/head.ejs")%>
 
-<body>
+<body background="/images/fondologin.jpeg" class="fondo">
 	
 	<!-- Header -->
 	<%-include("./partials/header.ejs")%>
@@ -13,31 +13,28 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title title">Registrate</h2>
-			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<form method="get" action="">
 
-					<input type="text" name="texto1" value="Nombre" /> <br />
-					<input type="text" name="texto1" value="Apellido" /> <br />
-					<input type="text" name="texto1" value="Crea un usuario" /> <br />
-					<input type="text" name="texto1" value="Email" /> <br />
-					<input type="text" name="texto1" value="Contraseña" /> <br />
-					
-					
-				</form>
-				<br>
-				<button type="submit">
-
-					<b><a href="/profile">
-						<i>Registrarse </i>
-					</a></b> <br/>
-			   </button>
+					<div class="login">
+						<div class="login-triangle"></div>
+						
+						<h2 class="login-header">REGISTRATE</h2>
+					  
+						<form class="login-container">
+							<p><input type="email" placeholder="Nombre"></p>
+							<p><input type="email" placeholder="Apellido"></p>
+							<p><input type="email" placeholder="Mail"></p>
+						  <p><input type="email" placeholder="Crea un usuario"></p>
+						  <p><input type="password" placeholder="Crea una contraseña"></p>
+						  <p><input type="submit" value="ACEPTAR"></p>
+						</form>
+					  </div>
+					</div>
 				
 			</h2>
-
+		</div>
+	</div>
 
 	<!-- footer -->
 	<%-include("./partials/footer.ejs")%>
