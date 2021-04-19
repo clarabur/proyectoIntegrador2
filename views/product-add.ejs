@@ -3,7 +3,7 @@
 <!-- Include Head -->
 <%-include("./partials/head.ejs")%>
 
-<body>
+<body background="/images/fotoproducto.jpeg" class="fondo">
 	
 	<!-- Header -->
 	<%-include("./partials/headerLogueado.ejs")%>
@@ -12,17 +12,33 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title title">Agregar productos</h2>
-			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<button type="submit">
-					<b> eliminar producto</b><br />
-			   </button>
+				<div class="login">
+					<div class="login-triangle"></div>
+					
+					<h2 class="login-header">AGREGAR PRODUCTO</h2>
+				  
+					<form class="login-container" action="/profile">
+						<p><input type="text" placeholder="Nombre del producto" required></p>
+						<p><input type="text" placeholder="Descripcion breve" required></p>
+						<p><select name="categoria" class="categoria" required>
+								<option value="1">Categoría</option>
+								<option value="2">Verano</option>
+								<option value="3">Invierno</option>
+							</select></p>
+					  <p><textarea class="categoria" name="comment" form="usrform"required>
+					</textarea> </p>
+					  <p><input type="file" placeholder="Seleccionar imagen" required></p>
+					  <p><input type="file" placeholder="Seleccionar imagen" required></p>
+					  <p><input type="submit" value="CARGAR PRODUCTO"></p>
+					</form>
+				  </div>
+				</div>
 			</h2>
-
-
+			
+		</div>
+	</div>
 	<!-- footer -->
 	<%-include("./partials/footer.ejs")%>
 	<!-- /footer -->
