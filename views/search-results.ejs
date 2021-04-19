@@ -17,11 +17,29 @@
 				<h2 class="products-title title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
+			<h2 class="col-12"> 
+				<p>No existen esos productos los cual estas buscando....</p>
+				<p>Algunas recomendaciones sobre tu búsqueda:</p>
 			</h2>
-
+			<%for (let index = 4; index < 8; index++) {%>
+				<%const element = productos[index];%>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/product/<%=element.id%>">
+							<figure class="product-box_image1">
+								<img src="<%=element.imagen%>" alt="blazer">
+							</figure>
+							<article class="product-box_data">
+								<h2><%=element.nombre%></h2>
+								<p><%=element.descripcion%></p>
+								<p>Comentarios: 4</p>
+							</article>
+						</a>
+					</section>
+				</div>
+				<%}%>
+		</div>
+	</div>
 
 	<!-- footer -->
 	<%-include("./partials/footer.ejs")%>
