@@ -4,7 +4,7 @@
 
 <%-include("./partials/head.ejs")%>
 
-<body>
+<body background="/images/fondoregister3.jpeg" class="fondo">
 	
 	<!-- Header -->
 	<%-include("./partials/headerLogueado.ejs")%>
@@ -13,21 +13,22 @@
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title title">Editar mi perfil</h2>
-			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> 
-				<p> Ingrese su nuevo nombre: </p> <input type="text" name="Nombre" maxlength="6"/><br />
-
-				<button type="submit">
-
-					<b><a href="/profile">
-						<i>Confirmar Cambio </i>
-					</a></b> <br/>
-			   </button>
+				<div class="login">
+					
+					<h2 class="login-header">EDITAR MI PERFIL</h2>
+				  
+					<form class="login-container">
+					  <p><input type="email" placeholder="Nuevo usuario"></p>
+					  <p><input type="password" placeholder="Contraseña"></p>
+					  <p><a href="/profile"><input type="submit" value="CONFIRMAR CAMBIO"></a></p>
+					</form>
+				  </div>
+				</div>
 			</h2>
-
+		</div>
+	</div>
 
 	<!-- footer -->
 	<%-include("./partials/footer.ejs")%>

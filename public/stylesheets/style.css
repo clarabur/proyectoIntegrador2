@@ -116,3 +116,42 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.Agregar {
+  background: rgb(23, 28, 75);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+
+.Agregar button[type="submit"] {
+  background: rgb(32, 110, 21);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.Agregar button[type="submit"]:hover {
+  background: rgb(144, 196, 120);
+}
+
+.Agregar button{
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 10px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 1.5em;
+  border-radius: 40px;
+}
+
+.Agregar i{
+ font-style: normal;
+ margin-left: 5px;
+}
