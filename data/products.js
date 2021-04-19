@@ -26,9 +26,9 @@ let products ={
     },
     {
         id: 4,
-        nombre: "remera clasica",
+        nombre: "remera estampada",
         imagen:"/images/products/remera1.webp",
-        descripcion:"remera de algodon blanca clasica",
+        descripcion:"remera de algodon negra con estampa, con hombreras",
         comentarios:"Comentarios: 4",
     },
     {
