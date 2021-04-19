@@ -1,8 +1,10 @@
 
+var detalleProducto  = require ("../data/products")
+
 let indexController = {
 
     index: (req, res)=>{
-        res.render ("index")
+        res.render ("index", {productos: detalleProducto.lista})
     }
 }
 

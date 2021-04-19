@@ -12,7 +12,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title title">Blazer negro</h2> 
+			<h2 class="products-title title"><%=producto.nombre%></h2> 
 			<p class="product-detail-description">
 				<a href="/product-add">Editar</a>
 				
@@ -29,9 +29,9 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/bazer.jpeg" alt="" class="product-detail-img">
+					<img src="<%=producto.imagen%>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						Blazer color negro de algodon 100%, corte sastre confeccionado en tejido semi elastizado que aporta excelente calce y comodidad a la prenda. Forrería de mangas de satén opaco con un bajo porcentaje de elastano para acompañar el movimiento del cuerpo y el tejido exterior de la prenda. Forrería de cuerpo con crepe de satén semi brilloso. Silueta entallada y largo por debajo de la cadera. Posee un pequeño bolsillo ojal del lado derecho y dos bolsillos ojales con tapa a los costados de la prenda.</p>
+						<%=producto.descripcion%></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
