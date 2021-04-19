@@ -27,7 +27,7 @@ let products ={
     {
         id: 4,
         nombre: "remera clasica",
-        imagen:"/images/products/remera3.jpeg",
+        imagen:"/images/products/remera1.webp",
         descripcion:"remera de algodon blanca clasica",
         comentarios:"Comentarios: 4",
     },
