@@ -59,6 +59,14 @@ let products ={
         descripcion:"Vestido de saten rosa largo con espalda totalmente descubierta. Tiene dos tiritas finas que se atan en la espalda y un tajo sobre la pierna derecha.",
         comentarios:"Comentarios: 4",
     },
+    {
+        id: 9,
+        nombre: "blazer rosa",
+        imagen:"/images/products/blazer rosa.jpeg",
+        descripcion:"Blazer rosa de algodon y corte sastre confeccionado en tejido semi elastizado que aporta excelente calce y comodidad a la prenda. Forrería de mangas de satén opaco con un bajo porcentaje de elastano para acompañar el movimiento del cuerpo y el tejido exterior de la prenda. Forrería de cuerpo con crepe de satén semi brilloso. Silueta entallada y largo por debajo de la cadera. Posee un pequeño bolsillo ojal del lado derecho y dos bolsillos ojales con tapa a los costados de la prenda.",
+        comentarios:"Comentarios: 4",
+    },
+
 ],
 }
 module.exports=products
