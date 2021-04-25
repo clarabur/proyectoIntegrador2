@@ -69,6 +69,13 @@ hr {
 .main-header {
   padding: 15px 0;
   background-color: var(--yellow);
+  padding-bottom: 25px;
+}
+
+.main-header1 {
+  padding: 15px 0;
+  background-color: black;
+  padding-bottom: 25px;
 }
 
 .main-header_home-link,
@@ -113,6 +120,10 @@ hr {
   cursor: pointer;
 }
 
+.align-items-center {
+  padding-top: 10px;
+
+}
 
 /*====== Main Navbar ======*/
 .btn-toggle-navbar {
@@ -127,8 +138,9 @@ hr {
 }
 
 .main-navbar {
-  margin-top: 20px;
+  margin-top: 15px;
   display: none;
+  height: 50px;
 }
 
 .left-navbar,
@@ -139,19 +151,22 @@ hr {
 .left-navbar {
   border: solid rgba(128, 128, 128, 0.801) 1px;
   padding-left: 15px;
-  margin-right: 700px;
 }
 
 .left-navbar1 {
   border: solid rgb(16, 34, 73) 1px;
   font-size: 1.5em;
   display: block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 18px;
-  padding-left: 18px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  padding-right: 15px;
+  padding-left: 15px;
   border-radius: 50%;
   background-color: rgb(24, 30, 83);
+}
+
+.main-navbar a{
+  padding-right: 630px;
 }
 
 .left-navbar1:hover{
@@ -517,7 +532,6 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
-
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
