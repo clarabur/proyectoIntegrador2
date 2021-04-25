@@ -76,6 +76,10 @@ hr {
   display: block;
 }
 
+.main-header_home-link {
+  margin-left: 20px;
+}
+
 .main-header_credit-link {
   font-size: 1.5em;
   margin-top: 20px;
@@ -132,6 +136,28 @@ hr {
   font-size: 1.5em;
 }
 
+.left-navbar {
+  border: solid rgba(128, 128, 128, 0.801) 1px;
+  padding-left: 15px;
+  margin-right: 700px;
+}
+
+.left-navbar1 {
+  border: solid rgb(16, 34, 73) 1px;
+  font-size: 1.5em;
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 18px;
+  padding-left: 18px;
+  border-radius: 50%;
+  background-color: rgb(24, 30, 83);
+}
+
+.left-navbar1:hover{
+  background-color: #1855b1;
+}
+
 .logout{
   background: transparent;
   border: 0px;
@@ -140,7 +166,7 @@ hr {
 }
 
 .logout:hover{
-  color: #1259c3;
+  color: #0c4497;
 }
 
 .left-navbar a,
