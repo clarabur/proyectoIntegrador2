@@ -78,48 +78,58 @@ INSERT INTO comentarios VALUES (default, 1, 1, "Excenlente calidad!", "2020-10-4
 INSERT INTO comentarios VALUES (default, 2, 1, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 1, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 1, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 1, "Excenlente producto!", "2020-10-6" );
 
 INSERT INTO comentarios VALUES (default, 1, 2, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 2, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 2, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 2, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 2, "Excenlente producto!", "2020-10-6" );
 
 INSERT INTO comentarios VALUES (default, 1, 3, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 3, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 3, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 3, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 3, "Excenlente producto!", "2020-10-6" );
 
 INSERT INTO comentarios VALUES (default, 1, 4, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 4, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 4, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 4, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 4, "Excenlente producto!", "2020-10-6" );
 
 INSERT INTO comentarios VALUES (default, 1, 5, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 5, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 5, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 5, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 5, "Excenlente producto!", "2020-10-6" );
 
 INSERT INTO comentarios VALUES (default, 1, 6, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 6, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 6, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 6, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 6, "Excenlente producto!", "2020-10-6" );
 
 INSERT INTO comentarios VALUES (default, 1, 7, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 7, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 7, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 7, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 7, "Excenlente producto!", "2020-10-6" );
 
 INSERT INTO comentarios VALUES (default, 1, 8, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 8, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 8, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 8, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 8, "Excenlente producto!", "2020-10-6" );
 
 INSERT INTO comentarios VALUES (default, 1, 9, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 9, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 9, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 9, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 9, "Excenlente producto!", "2020-10-06" );
 
 INSERT INTO comentarios VALUES (default, 1, 10, "Excenlente calidad!", "2020-10-4" );
 INSERT INTO comentarios VALUES (default, 2, 10, "Me encanto el producto", "2020-07-09" );
 INSERT INTO comentarios VALUES (default, 3, 10, "Prenda de muy buena calidad, muy suave al tacto", "2021-01-12" );
 INSERT INTO comentarios VALUES (default, 4, 10, "No lo recomiendo, parecía mas lindo de lo que es", "2021-03-15" );
+INSERT INTO comentarios VALUES (default, 5, 10, "Excenlente producto!", "2020-10-6" );
