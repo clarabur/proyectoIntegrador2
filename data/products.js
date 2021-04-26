@@ -61,11 +61,35 @@ let products ={
     },
     {
         id: 9,
-        nombre: "blazer rosa",
+        nombre: "Blazer rosa",
         imagen:"/images/products/blazer rosa.jpeg",
         descripcion:"Blazer rosa de algodon y corte sastre confeccionado en tejido semi elastizado que aporta excelente calce y comodidad a la prenda. Forrería de mangas de satén opaco con un bajo porcentaje de elastano para acompañar el movimiento del cuerpo y el tejido exterior de la prenda. Forrería de cuerpo con crepe de satén semi brilloso. Silueta entallada y largo por debajo de la cadera. Posee un pequeño bolsillo ojal del lado derecho y dos bolsillos ojales con tapa a los costados de la prenda.",
         comentarios:"Comentarios: 4",
     },
+    {
+        id: 10,
+        nombre: "Camisa azul",
+        imagen:"/images/products/camisa azul.webp",
+        descripcion:"Camisa De Corte Clásico, Confeccionada En Un Material Tipo Seda Que Vuelve A Los Guardarropas Este Año Con Una Mezcla De Texturas.",
+        comentarios:"Comentarios: 4",
+    },
+    {
+        id: 11,
+        nombre: "Campera de jean blanca",
+        imagen:"/images/products/blanco.webp",
+        descripcion:"Campera denim blanca, 100% algodón.",
+        comentarios:"Comentarios: 4",
+    },
+    {
+        id: 12,
+        nombre: "Campera de jean clasica",
+        imagen:"/images/products/zara.webp",
+        descripcion:"Campera denim, 100% algodón.",
+        comentarios:"Comentarios: 4",
+    },
+
+
+
 
 ],
 }
