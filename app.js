@@ -25,6 +25,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: "Nuestro string secreto",
+  resave: false,
+  saveUninitialized: true
+}))
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -52,5 +57,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const session = require('express-session');
+
+app.use ((req,res,next) => {
+  if(req.session.user != undefined){
+    res.locals = req.session.user
+  }
+  return next()
+})
 
 module.exports = app;
