@@ -9,7 +9,7 @@ CREATE TABLE usuarios (
     mail VARCHAR(100) NOT NULL,
     fecha DATE NOT NULL,
     telefono INT,
-    contraseña VARCHAR(50) NOT NULL
+    contraseña VARCHAR(80) NOT NULL
 );
 
 CREATE TABLE productos (
