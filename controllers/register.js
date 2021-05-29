@@ -19,6 +19,10 @@ let registerController = {
         .then(usuario => {
             res.redirect('/')
         })
+        db.Usuario.findOne ({
+            where: [{ email: req.body.email}]
+        })
+        .catch (error => console.log (error))
       },
   }
 
