@@ -23,6 +23,12 @@ let registerController = {
             where: [{ email: req.body.email}]
         })
         .catch (error => console.log (error))
+      
+        db.Usuario.findOne ({
+            where: [{ password: req.body.password}]
+        })
+        .catch (error => console.log (error))
+      
       },
   }
 
