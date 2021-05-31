@@ -19,18 +19,30 @@
 					<div class="login">
 						<div class="login-triangle"></div>
 						
+				
 						<h2 class="login-header">REGISTRATE</h2>
+
+						
+                      <%  if(locals.errors){  %> 
+	                      <p class= “error”> <%= errors.message %> </p> 
+                        <% } %>
+					  
 					
-						<form class="login-container" action="/profile" method="POST">
+						<form class="login-container" action="/register" method="POST">
 							
 							<p><input type="text" placeholder="Nombre" name="first_name" required></p>
 							<p><input type="text" placeholder="Apellido" name="last_name" required></p>
-							<p><input type="email" placeholder="Mail" name="email" required></p>
+							<p><input type="email" placeholder="Mail" name="email" ></p>
 							<p><input type="date" placeholder="date" name="date" required></p>
 						  <p><input type="text" placeholder="Crea un usuario" name="user" required></p>
-						  <p><input type="password" placeholder="Crea una contraseña" name="password" required></p>
+						  <p><input type="password" placeholder="Crea una contraseña" name="password" ></p>
+						  
 						  <p><input type="submit" value="SUBMIT"></p>
+
+						 
 						</form>
+						
+						
 					  </div>
 					</div>
 				

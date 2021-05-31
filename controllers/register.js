@@ -1,11 +1,18 @@
 const db = require ('../database/models')
-const op = db.Sequelize.Op
+const usuario = db.Usuario
 const bcrypt = require ('bcryptjs')
+const op = db.sequelize.op
 let registerController = {
 
     register: (req, res)=>{
-        res.render ("register")
-    }, store: (req, res) => {
+        if (req.session.usuario != undefined){
+            return res.redirect('/')
+        }else {
+            return res.render ('register')
+        } 
+    }, 
+    store: (req, res) => {
+       
         let usuario = {
             first_name: req.body.first_name,
             last_name: req.body.last_name,
@@ -14,23 +21,46 @@ let registerController = {
             user:req.body.user,
             password:bcrypt.hashSync(req.body.password, 10)
         }
+        let errors = {};
+        if(req.body.email == ""){
+            errors.message = "Email no puede estar vacío."; 
+            res.locals.errors = errors; 
+            return res.render('register'); 
+        }//else if (req.body.email != unique){
+           // errors.message = "Email no puede repetirse."; 
+           // res.locals.errors = errors; 
+           // return res.render('register'); 
+
+       // }
+        else if(req.body.password == ""){
+                    errors.message = "la contraseña no puede estar vacía."; 
+                    res.locals.errors = errors; 
+                    return res.render('register'); 
+
+        }else if (req.body.password < 3 ){
+                    errors.message =  "la contraseña debe ser mas larga"; 
+                    res.locals.errors = errors; 
+                    return res.render('register'); 
+                }  else {
+                            req.session.usuario = usuario
+                        }
+
         console.log (req.body);
         db.Usuario.create(usuario)
         .then(usuario => {
             res.redirect('/')
         })
-        db.Usuario.findOne ({
-            where: [{ email: req.body.email}]
-        })
-        .catch (error => console.log (error))
+        
+        
       
-        db.Usuario.findOne ({
-            where: [{ password: req.body.password}]
-        })
-        .catch (error => console.log (error))
+   
+
+    }
+
+       
+
       
-      },
   }
 
-
+  
 module.exports = registerController
