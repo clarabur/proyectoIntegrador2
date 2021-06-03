@@ -2,6 +2,7 @@ const db = require ('../database/models')
 const usuarios = db.Usuario
 const bcrypt = require ('bcryptjs')
 const op = db.sequelize.op
+
 let registerController = {
 
     register: (req, res)=>{
@@ -35,7 +36,7 @@ let registerController = {
                     res.locals.errors = errors; 
                     return res.render('register'); 
 
-        } else if  (req.body.password.lenght < 3){
+        } else if  (req.body.password.length < 3){
             errors.message =  "la contraseña debe ser mas larga"; 
             res.locals.errors = errors; 
             return res.render('register'); 
@@ -44,7 +45,7 @@ let registerController = {
             usuarios.findOne ({ where: [{ mail : req.body.email}]})
             .then (usuario => {
                 if (usuario != null){
-                    error.message = "email ya existe"
+                    errors.message = "email ya existe"
                     res.locals.errors = errors;
                     return res.render('register');
                 } else if (req.body.password != req.body.password1){
@@ -86,6 +87,15 @@ let registerController = {
 
       
   }
+
+
+  
+  
+  
+
+
+
+
 
   
 module.exports = registerController
