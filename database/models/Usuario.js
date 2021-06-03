@@ -5,25 +5,34 @@ let cols ={
     id: {
         autoIncrement: true,
         primaryKey: true,
-        type: dataTypes.INTEGER
+        type: dataTypes.INTEGER,
+        notNull: true
     },
     nombre:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
+        notNull: true
     },
     apellido:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
+        notNull: true
     },
     mail:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
+        notNull: true,
+        unique: true
     },
     fecha:{
-        type: dataTypes.DATE
+        type: dataTypes.DATE,
+        notNull: true
     },
     telefono:{
-        type: dataTypes.INTEGER
+        type: dataTypes.INTEGER,
+        notNull: true,
+        unique: true
     },
     contraseña:{
-        type: dataTypes.STRING
+        type: dataTypes.STRING,
+        notNull: true
     },
 };
 let config = {
