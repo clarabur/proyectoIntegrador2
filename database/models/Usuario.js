@@ -30,6 +30,10 @@ let cols ={
         notNull: true,
         unique: true
     },
+    user:{
+        type: dataTypes.STRING,
+        notNull: true
+    },
     contraseña:{
         type: dataTypes.STRING,
         notNull: true
