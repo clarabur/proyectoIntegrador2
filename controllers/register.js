@@ -61,6 +61,7 @@ let registerController = {
                         telefono: req.body.phone,
                         fecha: req.body.date,
                         user: req.body.user,
+                        avatar: req.file.filename
                     }
                     usuarios.create (usuario)
                     .then ( usuario => {
