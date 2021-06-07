@@ -19,6 +19,9 @@ module.exports = (sequelize, dataTypes)=> {
     descripcion:{
         type: dataTypes.STRING
     },
+    lanzamiento:{
+        type: dataTypes.DATE,
+    },
 };
 let config = {
     table: "productos",

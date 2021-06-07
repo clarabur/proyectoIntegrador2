@@ -11,8 +11,8 @@ let registerController = {
         }else {
             return res.render ('register')
         } 
-    }, 
-    store: (req, res) => {
+     }, 
+     store: (req, res) => {
        
         let usuario = {
             first_name: req.body.first_name,
@@ -77,25 +77,9 @@ let registerController = {
         } 
 
 
-       
-        
-      
-   
-
     }
-
-       
-
       
   }
-
-
-  
-  
-  
-
-
-
 
 
   

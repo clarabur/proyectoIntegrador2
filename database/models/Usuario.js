@@ -38,6 +38,10 @@ let cols ={
         type: dataTypes.STRING,
         notNull: true
     },
+    
+        avatar:{
+            type: dataTypes.STRING,
+    }
 };
 let config = {
     table: "usuarios",
