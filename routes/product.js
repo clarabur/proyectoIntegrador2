@@ -4,6 +4,6 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/:id', productController.product)
-                                                                                      
+
 
 module.exports = router;
