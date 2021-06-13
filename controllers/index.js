@@ -1,7 +1,7 @@
 const db = require ('../database/models')
-const Usuario = require('../database/models/Usuario')
+
 const productos = db.Producto
-const usuarios = db.Usuario
+
 const op = db.sequelize.Op
 //var detalleProducto  = require ("../data/products")
 
