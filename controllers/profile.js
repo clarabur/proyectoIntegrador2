@@ -17,9 +17,18 @@ let profileController = {
          */
         res.render ("profile", {productos: detalleProducto.lista})
     },
-    profileedit: (req, res)=>{
-        res.render ("profile-edit")
-    }
+  
+/*      show: (req, res)=>{
+          let primaryKey = req.params.id;
+        Usuario.findByPk(primaryKey, {
+         //   include: [{association: 'comentarios'},]
+        })
+     
+          .then(resultados => res.render('profile', {resultados}) )
+            .catch((err)=> `Error: ${err}`)  
+             
+         
+    }, */
 
 }
 

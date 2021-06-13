@@ -35,12 +35,13 @@
 										<p class="product-detail-description">
 											<%=resultados.descripcion%></p>
 									</article>
-									
+								
+									<%for(let i = 0; i<resultados.comentarios.length; i+=1){ %>
+										<p class="card-text"></span class="badge bg-info"><%= resultados.comentarios[i].comentario %></span></p>
+									<% } %>
 								</div>
 							</div>
-							<%for(let i = 0; i<resultados.comentarios.length; i+=1){ %>
-								<p class="card-text"></span class="badge bg-info"><%= resultados.comentarios[i].comentario %></span></p>
-							<% } %>
+						
 
 	</div>
 	<!-- /product detail -->
