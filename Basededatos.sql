@@ -9,7 +9,13 @@ CREATE TABLE usuarios (
     mail VARCHAR(100) NOT NULL,
     fecha DATE NOT NULL,
     telefono INT,
-    contraseña VARCHAR(80) NOT NULL
+    contraseña VARCHAR(80) NOT NULL,
+    created_at  TIMESTAMP NOT NULL,
+    updated_at  DATETIME NOT NULL,
+    user VARCHAR(20) NOT NULL  ,
+    avatar VARCHAR(200) NOT NULL,
+
+
 );
 
 CREATE TABLE productos (
@@ -17,7 +23,9 @@ id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 image VARCHAR(200) NOT NULL,
 nombre VARCHAR(50) NOT NULL,
 temporada VARCHAR(20) NOT NULL,
-descripcion VARCHAR (500) NOT NULL
+descripcion VARCHAR (500) NOT NULL,
+lanzamiento  DATE ,
+creadopor  VARCHAR(50) NOT NULL, 
 );
 
 CREATE TABLE usuario_producto (

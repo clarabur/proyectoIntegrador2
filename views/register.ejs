@@ -6,32 +6,31 @@
 <%-include("./partials/head.ejs")%>
 
 <body background="/images/fondologin.jpeg" class="fondo">
-	
-	<!-- Header -->
-	<%-include("./partials/header.ejs")%>
-	<!-- /Header -->
+    
+    <!-- Header -->
+    <%-include("./partials/header.ejs")%>
+    <!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
+    <!-- Novedades -->
+    <div class="container products-wrapper">
+        <div class="row">
+            <!-- Show the "ultimos" products -->
+            <h2 class="col-12"> 
 
-					<div class="login">
-						<div class="login-triangle"></div>
-						
-				
-						<h2 class="login-header">REGISTRATE</h2>
+                    <div class="login">
+                        <div class="login-triangle"></div>
+                        
+                
+                        <h2 class="login-header">REGISTRATE</h2>
 
-						
+                        
                       <%  if(locals.errors){  %> 
-	                      <p class= “alert”> <%= errors.message %> </p> 
+                          <p class= “alert”> <%= errors.message %> </p> 
                         <% } %>
-					  
-					
-						<form class="login-container" action="/register"  method="POST" enctype="multipart/form-data">
+                      
+                        <form class="login-container" action="/register"  method="POST" enctype="multipart/form-data">
                             
-                            <p><input type="text" placeholder="Nombre" name="first_name" required></p>
+                            <p><input  title="Se necesita un nombre" type="text" placeholder="Nombre" name="first_name" required=""></p>
                             <p><input type="text" placeholder="Apellido" name="last_name" required></p>
                             <p><input type="email" placeholder="Mail" name="email"  ></p>
                             <p><input type="number" placeholder="número de movil" name="phone" ></p>
@@ -39,26 +38,26 @@
                           <p><input type="text" placeholder="Crea un usuario" name="user" required></p>
                           <p><input type="password" placeholder="Crea una contraseña" name="password" ></p>
                           <p><input type="password" placeholder="repite la contraseña" name="password1" ></p>
-						  <p><input type="file" name="avatar" id=""></p>
-                          
-						  <p><input type="submit" value="SUBMIT"></p>
+                          <p><input type="file" name="avatar" id=""></p>
+                          <div></div>
+                         <p> <input class="botton" type="submit" value="SUBMIT"></p> 
+
+                        
 
 
+                    
+                        
+                      </div>
+                    </div>
+                
+            </h2>
+        </div>
+    </div>
 
+    <!-- footer -->
+    <%-include("./partials/footer.ejs")%>
 
-					
-						
-					  </div>
-					</div>
-				
-			</h2>
-		</div>
-	</div>
-
-	<!-- footer -->
-	<%-include("./partials/footer.ejs")%>
-
-	<!-- /footer -->
+    <!-- /footer -->
 </body>
 
 </html>

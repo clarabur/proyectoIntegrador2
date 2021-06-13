@@ -5,9 +5,10 @@ module.exports = (sequelize, dataTypes)=> {
     id: {
         autoIncrement: true,
         primaryKey: true,
-        type: dataTypes.INTEGER
+        type: dataTypes.INTEGER,
+        notNull: true
     },
-    imagen:{
+    image:{
         type: dataTypes.STRING
     },
     nombre:{
@@ -19,6 +20,14 @@ module.exports = (sequelize, dataTypes)=> {
     descripcion:{
         type: dataTypes.STRING
     },
+    lanzamiento:{
+        type: dataTypes.DATE,
+        notNull: true,
+    }, 
+    creadopor:{
+        type: dataTypes.STRING,
+        notNull: true
+    },
 };
 let config = {
     table: "productos",
@@ -28,5 +37,27 @@ let config = {
 
 
     const Producto = sequelize.define(alias, cols, config)
+    
+    Producto.associate = (models)=>{
+        // Relacion
+     
+        Producto.belongsToMany( models.Comentario , {
+            as: 'comentarios',
+            through: 'producto_comentarios',
+            foreignKey: 'producto_id',
+            otherKey: 'comentario_id',
+            timestamps: false,
+        }),
+
+        Producto.belongsToMany( models.Usuario , {
+            as: 'usuarios',
+            through: 'producto_usuarios',
+            foreignKey: 'producto_id',
+            otherKey: 'usuario_id',
+            timestamps: false,
+        })
+       
+    }
+    
     return Producto;
 }

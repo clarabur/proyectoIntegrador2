@@ -1,22 +1,45 @@
 const db = require ('../database/models')
+
 const productos = db.Producto
-const op = db.sequelize.op
-var detalleProducto  = require ("../data/products")
+
+const op = db.sequelize.Op
+//var detalleProducto  = require ("../data/products")
 
 let indexController = {
 
     index: (req, res)=>{
-        res.render ("index", {productos: detalleProducto.lista})
-    },
-    // ordenar productos de descendentes
+            productos.findAll()
+          
+         .then((resultados)=> res.render('index', {resultados}))
+              .catch((err)=> `Error: ${err}`) 
+ 
+        },
+        show: (req, res)=>{
+              let primaryKey = req.params.id;
+            productos.findByPk(primaryKey, {
+                include: [{association: 'comentarios'}, {association: 'usuarios'}]
+            })
+         
+              .then(resultados => res.render('product', {resultados}) )
+                .catch((err)=> `Error: ${err}`) 
+                 
+             
+        },
+   
+ 
+    
+    // ordenar productos de manera descendentes
 
   store: (req, res)=>{
     db.Producto.findAll({
         order: [
-            ['productos', 'DES']
+            ['lanzamiento', 'DESC']
         ],
+
+       
   })
- }
+ },
+
 }
 
-module.exports = indexController
+module.exports = indexController;

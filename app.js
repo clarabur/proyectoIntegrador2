@@ -9,8 +9,6 @@ let db = require ('./database/models')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
-var idRouter = require('./routes/id');
-var productRouter = require('./routes/product');
 var profileRouter = require('./routes/profile');
 var registerRouter = require('./routes/register');
 var searchResultsRouter = require('./routes/search-results');
@@ -66,8 +64,6 @@ app.use (function (req, res, next){
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
-app.use('/id', idRouter);
-app.use('/product', productRouter);
 app.use('/profile', profileRouter);
 app.use('/register', registerRouter);
 app.use('/search-results', searchResultsRouter);
