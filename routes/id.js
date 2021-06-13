@@ -1,8 +1,8 @@
-var express = require('express');
+ var express = require('express');
 
 const idController = require('../controllers/idController');
 var router = express.Router();
 
-router.get("/", idController.porId)
+//router.get("/", idController.porId)
 
-module.exports = router;
+module.exports = router; 

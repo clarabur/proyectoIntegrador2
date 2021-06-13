@@ -1,4 +1,4 @@
-let products = require("../data/products")
+/*  // let products = require("../data/products")
 
 let idController = {
 
@@ -11,5 +11,5 @@ let idController = {
         })
     }
 }
-
-module.exports = idController
+ 
+module.exports = idController  */
