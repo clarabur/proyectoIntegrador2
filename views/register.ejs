@@ -28,7 +28,7 @@
                           <p class= “alert”> <%= errors.message %> </p> 
                         <% } %>
                       
-                        <form class="login-container" action="/register"  method="POST" enctype="multipart/form-data">
+                        <form class="login-container" action="/register"  method="POST" >
                             
                             <p><input  title="Se necesita un nombre" type="text" placeholder="Nombre" name="first_name" required=""></p>
                             <p><input type="text" placeholder="Apellido" name="last_name" required></p>
@@ -36,8 +36,8 @@
                             <p><input type="number" placeholder="número de movil" name="phone" ></p>
                             <p><input type="date" placeholder="fecha de nacimiento" name="date" required></p>
                           <p><input type="text" placeholder="Crea un usuario" name="user" required></p>
-                          <p><input type="password" placeholder="Crea una contraseña" name="password" ></p>
-                          <p><input type="password" placeholder="repite la contraseña" name="password1" ></p>
+                          <p><input type="password" placeholder="Crea una contraseña" name="password" required ></p>
+                          <p><input type="password" placeholder="repite la contraseña" name="password1" required ></p>
                           <p><input type="file" name="avatar" id=""></p>
                           <div></div>
                          <p> <input class="botton" type="submit" value="SUBMIT"></p> 
