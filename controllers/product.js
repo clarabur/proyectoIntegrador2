@@ -1,4 +1,4 @@
-var detalleProducto  = require ("../data/products")
+/* var detalleProducto  = require ("../data/products")
 
 let productController = {
 
@@ -16,4 +16,4 @@ let productController = {
 }
 
 module.exports = productController
-
+ */

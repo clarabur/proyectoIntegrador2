@@ -10,80 +10,38 @@
 	<!-- /Header -->
 	
 	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<h2 class="titulo-producto title"><%=producto.nombre%></h2> 
-			<p class="product-detail-description">
+	
 
-				<div class="Agregar">
-					<button type="submit">
-						<b> <a href="/profile">
-							<i class="fas fa-shopping-bag"></i>
-							<i>Agregar a mis compras</i>
-						</a></b> <br/>
-				   </button>
-				</div>
-			</p>
-		</div>
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%=producto.imagen%>" alt="" class="product-detail-img">
-					<p class="product-detail-description">
-						<%=producto.descripcion%></p>
-				</article>
-				<div class="col-12 col-lg-4">
-					<section class="comments">
-						 <article>							
-							<img src="/images/foto 1.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="/profile">Daira Sapir </a> </strong>
-								Excenlente calidad!</p> <p>2020-10-4</p>
+			
+						<div class="container products-wrapper">
+							<div class="d-flex align-items-center">
+								<h2 class="titulo-producto title"><%=resultados.nombre%></h2> 
+								<p class="product-detail-description">
+					
+									<div class="Agregar">
+										<button type="submit">
+											<b> <a href="/profile">
+												<i class="fas fa-shopping-bag"></i>
+												<i>Agregar a mis compras</i>
+											</a></b> <br/>
+									   </button>
+									</div>
+								</p>
 							</div>
-						</article>
-						<article>
-							<img src="/images/foto2.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">Clara Bur </a> </strong>
-									Me encanto el producto</p> <p>2020-07-09</p>
+							<div class="product-detail">
+								<div class="row">
+									<article class="col-12 col-lg-8 product-detail-info">
+										<img src="<%=resultados.image%>" alt="" class="product-detail-img">
+										<p class="product-detail-description">
+											<%=resultados.descripcion%></p>
+									</article>
+									
+								</div>
 							</div>
-						</article>
-						<article>
-							<img src="/images/foto 3.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">Cala Ruggeri </a> </strong>
-									Prenda de muy buena calidad, muy suave al tacto </p> <p>2021-01-12</p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/foto 4.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">Agostina Cervio </a> </strong>
-									No lo recomiendo, parecía mas lindo de lo que es</p> <p>2021-03-15</p>
-							</div>
-						</article>
-						<article>
-							<img src="/images/foto5.jpeg" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/profile">Lola Torres </a> </strong>
-									Excenlente producto!</p> <p>2020-10-06</p>
-							</div>
-						</article>
+							<%for(let i = 0; i<resultados.comentarios.length; i+=1){ %>
+								<p class="card-text"></span class="badge bg-info"><%= resultados.comentarios[i].comentario %></span></p>
+							<% } %>
 
-					</section>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
-					<hr>
-				</div>
-			</div>
-		</div>
 	</div>
 	<!-- /product detail -->
 
