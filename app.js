@@ -33,6 +33,21 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+
+app.use(function(req, res, next) {
+  if(req.cookies.userId && !req.session.user) {
+    db.User.findByPk(req.cookies.userId).then(results => {
+      req.session.user ={
+        id: results.id,
+        name: results.username
+      };
+      return next();
+    });
+  } else {
+  	return next();
+  }}
+);
+
 app.use (function (req, res, next){
   if ( req.session.usuario!= undefined){
     res.locals.usuario = req.session.usuario
