@@ -20,7 +20,7 @@ let indexController = {
                 include: [{association: 'comentarios'}, {association: 'usuarios'}]
             })
          
-              .then(resultados => res.render('product', {resultados}) )
+              .then(resultados => res.render ('product', {resultados}) )
                 .catch((err)=> `Error: ${err}`) 
                  
              
@@ -34,7 +34,7 @@ let indexController = {
               }
             ]
           })
-          .then(resultados => res.render('search-results', {resultados}) )
+          .then(resultados => res.render('search-results', {resultados:resultados}) )
             .catch((err)=>console.log (err) ) 
         },
       
