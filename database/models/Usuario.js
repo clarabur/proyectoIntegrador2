@@ -36,11 +36,9 @@ let cols ={
     },
     createdAt: {
         type: dataTypes.DATE,
-        field: "created_at",
     },
     updatedAt: {
         type: dataTypes.DATE,
-        field: "updated_at",
     },
     user:{
         type: dataTypes.STRING,
@@ -60,22 +58,15 @@ let config = {
      Usuario.associate = (models)=>{
         // Relacion
         
-      /*   Usuario.hasMany( models.Comentario , {
+        Usuario.hasMany(models.Comentario, {
             as: 'comentarios',
-            foreignKey: 'comentario_id',
+            foreignKey: 'usuario_id',
         }),
        
         Usuario.hasMany(models.Producto, {
             as: 'producto', 
-            foreignKey: 'productos'
-        }) */
-         Usuario.belongsToMany( models.Comentario , {
-                as: 'comentario',
-                through: 'usuario_comentarios',
-                foreignKey: 'usuario_id',
-                otherKey: 'comentario_id',
-                timestamps: false,
-            })
+            foreignKey: 'usuario_id'
+        }) 
     }
    
     return Usuario;

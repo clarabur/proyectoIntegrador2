@@ -30,11 +30,9 @@ module.exports = (sequelize, dataTypes)=> {
     },
     createdAt: {
         type: dataTypes.DATE,
-        field: "created_at",
     },
     updatedAt: {
         type: dataTypes.DATE,
-        field: "updated_at",
     }
 };
 let config = {
@@ -47,15 +45,6 @@ let config = {
       Producto.associate = (models)=>{
         // Relacion
      
-       /*  Producto.belongsTo(models.Comentario , {
-            as: 'comentario',
-            foreignKey: 'comentario_id',
-        })
-
-         Producto.belongsTo(models.Usuario , {
-            as: 'usuarios',
-            foreignKey: 'usuario_id',
-        })  */
     
         Producto.hasMany( models.Comentario , {
             as: 'comentario',
@@ -64,7 +53,7 @@ let config = {
         })
         Producto.belongsTo( models.Usuario , {
             as: 'usuario',
-            foreignKey: 'producto_id',
+            foreignKey: 'usuario_id',
         })
    }  
 

@@ -16,17 +16,34 @@ module.exports = (sequelize, dataTypes)=> {
         comentario:{
             type: dataTypes.STRING
         },
-        fecha:{
-            type: dataTypes.STRING
+        createdAt: {
+            type: dataTypes.DATE,
+        },
+        updatedAt: {
+            type: dataTypes.DATE,
         },
     };
     let config = {
         table: "comentarios",
-        timestamps: false,
-        underscored: false
     }
     
     
         const Comentario = sequelize.define(alias, cols, config)
+
+        Comentario.associate = (models)=>{
+            // Relacion
+         
+        
+            Comentario.belongsTo( models.Producto , {
+                as: 'producto',
+                foreignKey: 'producto_id',
+            
+            })
+            Comentario.belongsTo( models.Usuario , {
+                as: 'usuario',
+                foreignKey: 'usuario_id',
+            })
+       }  
+    
         return Comentario;
     }

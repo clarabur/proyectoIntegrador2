@@ -1,7 +1,5 @@
 const db = require('../database/models')
 
-const productos = db.Producto
-
 const op = db.sequelize.Op;
 
 //var detalleProducto  = require ("../data/products")
@@ -12,13 +10,12 @@ let indexController = {
 
     db.Producto.findAll()
 
-      .then(resultados => {
+      .then(resultado => {
 
         res.render('index', {
-          resultados: resultados
+          resultados: resultado
         })
       })
-      .catch((err) => `Error: ${err}`)
   },
   show: (req, res) => {
     let primaryKey = req.params.id;
