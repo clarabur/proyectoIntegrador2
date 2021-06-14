@@ -50,7 +50,7 @@ let config = {
             as: 'usuarios',
             foreignKey: 'usuario_id',
         }) 
-       
+    
    }
     
     return Producto;

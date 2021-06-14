@@ -11,12 +11,12 @@ let indexController = {
             productos.findAll()
           
          .then((resultados)=> res.render('index', {resultados}))
-              .catch((err)=> console.log(err) ) 
+         .catch((err)=> `Error: ${err}`) 
         },
         show: (req, res)=>{
               let primaryKey = req.params.id;
             productos.findByPk(primaryKey, {
-                include: [{association: 'comentarios'}]
+               include: [{association: 'comentario'}, {association: 'usuarios'}]
             })
          
               .then(resultados =>   
