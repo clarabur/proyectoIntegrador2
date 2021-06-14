@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes)=> {
         notNull: true,
     }, 
     creadopor:{
-        type: dataTypes.STRING,
+        type: dataTypes.INTEGER,
         notNull: true
     },
 };
@@ -38,26 +38,34 @@ let config = {
 
     const Producto = sequelize.define(alias, cols, config)
     
-    Producto.associate = (models)=>{
+      Producto.associate = (models)=>{
         // Relacion
      
-        Producto.belongsToMany( models.Comentario , {
+       /*  Producto.belongsTo(models.Comentario , {
             as: 'comentario',
-            through: 'comentarios',
-            foreignKey: 'producto_id',
-            otherKey: 'usuario_id',
-            timestamps: false,
+            foreignKey: 'comentario_id',
         })
 
-         Producto.belongsToMany( models.Usuario , {
+         Producto.belongsTo(models.Usuario , {
             as: 'usuarios',
+            foreignKey: 'usuario_id',
+        })  */
+    
+        Producto.belongsToMany( models.Comentario , {
+            as: 'comentario',
+            through: 'producto_comentarios',
+            foreignKey: 'producto_id',
+            otherKey: 'comentario_id',
+            timestamps: false,
+        })
+        Producto.belongsToMany( models.Usuario , {
+            as: 'usuario',
             through: 'producto_usuarios',
             foreignKey: 'producto_id',
             otherKey: 'usuario_id',
             timestamps: false,
-        }) 
-       
-   }
-    
+        })
+   }  
+
     return Producto;
 }

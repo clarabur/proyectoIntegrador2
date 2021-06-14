@@ -52,22 +52,26 @@ let config = {
 
     const Usuario = sequelize.define(alias, cols, config)
   
-    Usuario.associate = (models)=>{
+     Usuario.associate = (models)=>{
         // Relacion
         
-        Usuario.belongsToMany( models.Comentario , {
+      /*   Usuario.hasMany( models.Comentario , {
             as: 'comentarios',
-            through: 'usuario_comentarios',
-            foreignKey: 'usuario_id',
-            otherKey: 'comentario_id',
-            timestamps: false,
+            foreignKey: 'comentario_id',
         }),
        
-        Usuario.belongsTo(models.Producto, {
+        Usuario.hasMany(models.Producto, {
             as: 'producto', 
             foreignKey: 'productos'
-        })
+        }) */
+         Usuario.belongsToMany( models.Comentario , {
+                as: 'comentario',
+                through: 'usuario_comentarios',
+                foreignKey: 'usuario_id',
+                otherKey: 'comentario_id',
+                timestamps: false,
+            })
     }
-  
+   
     return Usuario;
 }

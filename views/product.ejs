@@ -36,19 +36,19 @@
 											<%=resultados.descripcion%></p>
 									</article>
 									<article>
-										
+ 	        
 										<div class="data">
 											<p class="user" >
-												<a href="/profile">
-													<%for(let i = 0; i<resultados.usuarios.length; i+=1){ %>
-													</span ><%= resultados.usuarios[i].nombre %></span></p>
-												<% } %>
-												</a>
+											    
+												<%for(let i = 0; i<resultados.usuario.length; i+=1){ %>
+													<a href="/profile/detalle/<%= resultados.usuario[i].id %>" > </span class="badge bg-info"><%= resultados.usuario[i].nombre %></span></a>
+												 	
+													<% } %>
+										  
 												<%for(let i = 0; i<resultados.comentario.length; i+=1){ %>
-													</span ><%= resultados.comentario[i].comentario %></span></p>
+													<p class="card-text"></span class="badge bg-info"><%= resultados.comentario[i].comentario %></span></p>
 												<% } %>
-												
-										</div>
+												</div>
 										<br>
 										<form class="form" action="" method="POST">
 											<input class="form-input" type="text" value="" placeholder="Agregar comentario">
