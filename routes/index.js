@@ -6,5 +6,6 @@ var router = express.Router();
 router.get('/', indexController.index) 
 router.get('/detalle/:id', indexController.show);
 router.post ('/', indexController.store)
+router.get('/search', indexController.search)
 
 module.exports = router;
