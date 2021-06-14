@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes)=> {
         notNull: true,
     }, 
     creadopor:{
-        type: dataTypes.STRING,
+        type: dataTypes.INTEGER,
         notNull: true
     },
 };
