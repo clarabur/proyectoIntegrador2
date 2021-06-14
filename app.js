@@ -12,7 +12,7 @@ var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
 var profileRouter = require('./routes/profile');
 var registerRouter = require('./routes/register');
-var searchResultsRouter = require('./routes/search-results');
+
 var productaddRouter = require('./routes/product-add');
 var profileeditRouter = require('./routes/profile-edit');
 var app = express();
@@ -68,7 +68,7 @@ app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/profile', profileRouter);
 app.use('/register', registerRouter);
-app.use('/search-results', searchResultsRouter);
+
 app.use('/product-add', productaddRouter);
 app.use('/profile-edit', profileeditRouter);
 
