@@ -21,7 +21,7 @@ let indexController = {
         show: (req, res)=>{
               let primaryKey = req.params.id;
             productos.findByPk(primaryKey, {
-              // include: [{association: 'comentario'}, {association: 'usuarios'}]
+              include: [{association: 'comentario'},{association: 'usuario'} ]
             })
          
               .then(resultados =>   
