@@ -11,8 +11,7 @@ let indexController = {
             productos.findAll()
           
          .then((resultados)=> res.render('index', {resultados}))
-              .catch((err)=> `Error: ${err}`) 
- 
+              .catch((err)=> console.log(err) ) 
         },
         show: (req, res)=>{
               let primaryKey = req.params.id;

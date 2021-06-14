@@ -41,20 +41,14 @@ let config = {
     Producto.associate = (models)=>{
         // Relacion
      
-        Producto.belongsToMany( models.Comentario , {
+        Producto.hasMany( models.Comentario , {
             as: 'comentario',
-            through: 'comentarios',
-            foreignKey: 'producto_id',
-            otherKey: 'usuario_id',
-            timestamps: false,
+            foreignKey: 'comentario_id',
         })
 
-         Producto.belongsToMany( models.Usuario , {
+         Producto.belongsTo( models.Usuario , {
             as: 'usuarios',
-            through: 'producto_usuarios',
-            foreignKey: 'producto_id',
-            otherKey: 'usuario_id',
-            timestamps: false,
+            foreignKey: 'usuario_id',
         }) 
        
    }
