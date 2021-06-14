@@ -22,8 +22,7 @@ let indexController = {
          
               .then(resultados =>   
                 //console.log (resultados)
-                res.render('product', {resultados}) )
-          
+                res.render('product', {resultados}) )                
                 .catch((err)=> `Error: ${err}`) 
                  
              
