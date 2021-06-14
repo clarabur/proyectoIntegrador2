@@ -42,22 +42,22 @@ let config = {
         // Relacion
      
         Producto.belongsToMany( models.Comentario , {
-            as: 'comentarios',
-            through: 'producto_comentarios',
+            as: 'comentario',
+            through: 'comentarios',
             foreignKey: 'producto_id',
-            otherKey: 'comentario_id',
+            otherKey: 'usuario_id',
             timestamps: false,
-        }),
+        })
 
-        Producto.belongsToMany( models.Usuario , {
+         Producto.belongsToMany( models.Usuario , {
             as: 'usuarios',
             through: 'producto_usuarios',
             foreignKey: 'producto_id',
             otherKey: 'usuario_id',
             timestamps: false,
-        })
+        }) 
        
-    }
+   }
     
     return Producto;
 }

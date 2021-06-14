@@ -35,10 +35,30 @@
 										<p class="product-detail-description">
 											<%=resultados.descripcion%></p>
 									</article>
-								
-									<%for(let i = 0; i<resultados.comentarios.length; i+=1){ %>
-										<p class="card-text"></span class="badge bg-info"><%= resultados.comentarios[i].comentario %></span></p>
-									<% } %>
+									<article>
+										
+										<div class="data">
+											<p class="user" >
+												<a href="/profile">
+													<%for(let i = 0; i<resultados.usuarios.length; i+=1){ %>
+													</span ><%= resultados.usuarios[i].nombre %></span></p>
+												<% } %>
+												</a>
+												<%for(let i = 0; i<resultados.comentario.length; i+=1){ %>
+													</span ><%= resultados.comentario[i].comentario %></span></p>
+												<% } %>
+												
+										</div>
+										<br>
+										<form class="form" action="" method="POST">
+											<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+											<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+										</form>
+									</article>
+									
+									
+									
+									
 								</div>
 							</div>
 						
