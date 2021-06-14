@@ -9,18 +9,18 @@ let profileController = {
 
     profile: (req, res)=>{
         
-          /*   Usuario.findAll()
+         usuarios.findAll()
           
-         .then((resultados)=> res.render('profile', {resultados}))
+         .then((resultados)=> res.render('product', {resultados}))
               .catch((err)=> `Error: ${err}`) 
  
-         */
-        res.render ("profile", {productos: detalleProducto.lista})
+        
+       // res.render ("profile", {productos: detalleProducto.lista})
     },
   
-/*      show: (req, res)=>{
+show: (req, res)=>{
           let primaryKey = req.params.id;
-        Usuario.findByPk(primaryKey, {
+        usuarios.findByPk(primaryKey, {
          //   include: [{association: 'comentarios'},]
         })
      
@@ -28,7 +28,7 @@ let profileController = {
             .catch((err)=> `Error: ${err}`)  
              
          
-    }, */
+    }, 
 
 }
 
