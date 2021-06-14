@@ -30,23 +30,28 @@ let cols ={
         notNull: true,
         unique: true
     },
-    user:{
-        type: dataTypes.STRING,
-        notNull: true
-    },
     contraseña:{
         type: dataTypes.STRING,
         notNull: true
     },
-    
+    createdAt: {
+        type: dataTypes.DATE,
+        field: "created_at",
+    },
+    updatedAt: {
+        type: dataTypes.DATE,
+        field: "updated_at",
+    },
+    user:{
+        type: dataTypes.STRING,
+        notNull: true
+    },
     avatar:{
             type: dataTypes.STRING,
     }
 };
 let config = {
     tablename: "usuarios",
-    timestamps: false,
-    underscored: false
 }
 
 

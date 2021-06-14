@@ -24,15 +24,21 @@ module.exports = (sequelize, dataTypes)=> {
         type: dataTypes.DATE,
         notNull: true,
     }, 
-    creadopor:{
+    usuario_id:{
         type: dataTypes.INTEGER,
-        notNull: true
+        notNull: true,
     },
+    createdAt: {
+        type: dataTypes.DATE,
+        field: "created_at",
+    },
+    updatedAt: {
+        type: dataTypes.DATE,
+        field: "updated_at",
+    }
 };
 let config = {
     table: "productos",
-    timestamps: false,
-    underscored: false
 }
 
 
@@ -51,19 +57,14 @@ let config = {
             foreignKey: 'usuario_id',
         })  */
     
-        Producto.belongsToMany( models.Comentario , {
+        Producto.hasMany( models.Comentario , {
             as: 'comentario',
-            through: 'producto_comentarios',
             foreignKey: 'producto_id',
-            otherKey: 'comentario_id',
-            timestamps: false,
+        
         })
-        Producto.belongsToMany( models.Usuario , {
+        Producto.belongsTo( models.Usuario , {
             as: 'usuario',
-            through: 'producto_usuarios',
             foreignKey: 'producto_id',
-            otherKey: 'usuario_id',
-            timestamps: false,
         })
    }  
 
