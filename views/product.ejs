@@ -40,11 +40,11 @@
 										<div class="data">
 											<p class="user" >
 											    
-													<%for(let i = 0; i<resultados.usuario.length; i+=1){ %>
-														<a href="/profile/detalle/<%= resultados.usuario[i].id %>" > </span class="badge bg-info"><%= resultados.usuario[i].nombre %></span></a>
-														
+												<%for(let i = 0; i<resultados.usuario.length; i+=1){ %>
+													<a href="/profile/detalle/<%= resultados.usuario[i].id %>" > </span class="badge bg-info"><%= resultados.usuario[i].nombre %></span></a>
+												 	
 													<% } %>
-												
+										  
 												<%for(let i = 0; i<resultados.comentario.length; i+=1){ %>
 													<p class="card-text"></span class="badge bg-info"><%= resultados.comentario[i].comentario %></span></p>
 												<% } %>
