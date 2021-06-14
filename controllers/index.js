@@ -23,6 +23,7 @@ let indexController = {
               .then(resultados =>   
                 //console.log (resultados)
                 res.render('product', {resultados}) )
+          
                 .catch((err)=> `Error: ${err}`) 
                  
              
@@ -34,8 +35,8 @@ let indexController = {
               { nombre: { [op.like]: `%${buscadorProductos}%` } }
             ]
           })
-          .then(resultados => res.render('search-results', {resultados}) )
-          .catch((err)=> console.log (err)) 
+          .then(resultados => res.render('search-results', {resultados:resultados}) )
+            .catch((err)=>console.log (err) ) 
         },
        
    
