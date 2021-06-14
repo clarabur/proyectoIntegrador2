@@ -62,12 +62,10 @@ let config = {
             otherKey: 'comentario_id',
             timestamps: false,
         }),
-        Usuario.belongsToMany( models.Producto , {
-            as: 'actors',
-            through: 'usuario_producto',
-            foreignKey: 'producto_id',
-            otherKey: 'usuario_id',
-            timestamps: false,
+       
+        Usuario.belongsTo(models.Producto, {
+            as: 'producto', 
+            foreignKey: 'productos'
         })
     }
   
