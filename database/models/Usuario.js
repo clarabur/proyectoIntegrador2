@@ -39,12 +39,12 @@ let cols ={
         notNull: true
     },
     
-        avatar:{
+    avatar:{
             type: dataTypes.STRING,
     }
 };
 let config = {
-    table: "usuarios",
+    tablename: "usuarios",
     timestamps: false,
     underscored: false
 }

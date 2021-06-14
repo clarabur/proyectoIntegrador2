@@ -1,31 +1,30 @@
+DROP DATABASE IF EXISTS programacion2;
 CREATE DATABASE programacion2 CHARACTER SET utf8mb4;
 
 USE programacion2;
 
 CREATE TABLE usuarios (
 	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(20) NOT NULL,
-    apellido VARCHAR(20) NOT NULL,
-    mail VARCHAR(100) NOT NULL,
-    fecha DATE NOT NULL,
+    nombre VARCHAR(20) ,
+    apellido VARCHAR(20) ,
+    mail VARCHAR(100) ,
+    fecha DATE ,
     telefono INT,
-    contraseña VARCHAR(80) NOT NULL,
-    created_at  TIMESTAMP NOT NULL,
-    updated_at  DATETIME NOT NULL,
-    user VARCHAR(20) NOT NULL  ,
-    avatar VARCHAR(200) NOT NULL,
-
-
+    contraseña VARCHAR(80) ,
+    created_at  TIMESTAMP ,
+    updated_at  DATETIME ,
+    user VARCHAR(20) ,
+    avatar VARCHAR(200) 
 );
 
 CREATE TABLE productos (
 id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-image VARCHAR(200) NOT NULL,
-nombre VARCHAR(50) NOT NULL,
-temporada VARCHAR(20) NOT NULL,
-descripcion VARCHAR (500) NOT NULL,
+image VARCHAR(200) ,
+nombre VARCHAR(50) ,
+temporada VARCHAR(20) ,
+descripcion VARCHAR (500) ,
 lanzamiento  DATE ,
-creadopor  VARCHAR(50) NOT NULL, 
+creadopor  VARCHAR(50)  
 );
 
 CREATE TABLE usuario_producto (
@@ -42,7 +41,7 @@ id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 usuario_id INT,
 producto_id INT,
 comentario VARCHAR(500),
-fecha DATE NOT NULL
+fecha DATE 
 );
 
 CREATE TABLE usuario_comentarios (

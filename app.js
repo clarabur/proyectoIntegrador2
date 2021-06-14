@@ -9,6 +9,7 @@ let db = require ('./database/models')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
+var logoutRouter = require('./routes/logout');
 var profileRouter = require('./routes/profile');
 var registerRouter = require('./routes/register');
 var searchResultsRouter = require('./routes/search-results');
@@ -39,7 +40,7 @@ app.use(function(req, res, next) {
     db.User.findByPk(req.cookies.userId).then(results => {
       req.session.user ={
         id: results.id,
-        name: results.username
+        name: results.user
       };
       return next();
     });
@@ -49,8 +50,8 @@ app.use(function(req, res, next) {
 );
 
 app.use (function (req, res, next){
-  if ( req.session.usuario!= undefined){
-    res.locals.usuario = req.session.usuario
+  if ( req.session.user){
+    res.locals = req.session.user
     return next()
   }
   return next()
@@ -64,6 +65,7 @@ app.use (function (req, res, next){
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/profile', profileRouter);
 app.use('/register', registerRouter);
 app.use('/search-results', searchResultsRouter);

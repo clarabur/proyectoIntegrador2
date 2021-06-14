@@ -15,14 +15,14 @@ let registerController = {
      store: (req, res) => {
        
         let usuario = {
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
+            nombre: req.body.first_name,
+            apellido: req.body.last_name,
             mail: req.body.email,
-            phone: req.body.phone,
-            date: req.body.date,
+            telefono: req.body.phone,
+            fecha: req.body.date,
             user: req.body.user,
-            password:bcrypt.hashSync(req.body.password, 10),
-            password1:bcrypt.hashSync(req.body.password1, 10)
+            contraseña:bcrypt.hashSync(req.body.password),
+            avatar: req.body.avatar,
         }
         let errors = {};
 
@@ -49,7 +49,7 @@ let registerController = {
                     res.locals.errors = errors;
                     return res.render('register');
                 } else if (req.body.password != req.body.password1){
-                    errors.message = "las constraseñas no coinsiden";
+                    errors.message = "las constraseñas no coinciden";
                     res.locals.errors = errors;
                     return res.render('register');
                 } else {

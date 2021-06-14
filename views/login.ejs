@@ -21,9 +21,9 @@
 					
 					<h2 class="login-header">INICIAR SESION</h2>
 				  
-					<form class="login-container" action="/profile">
-					  <p><input type="text" placeholder="Usuario" required></p>
-					  <p><input type="password" placeholder="Contraseña" required></p>
+					<form class="login-container" action="/login" method="POST">
+					  <p><input type="text" placeholder="Usuario" name="usuario" required></p>
+					  <p><input type="password" placeholder="Contraseña" name="password" required></p>
 					  <p><input type="checkbox" name="Recuerdame"> Recuerdame </p>
 					  <p><input type="submit"  value="ACEPTAR"></p>
 					</form>
