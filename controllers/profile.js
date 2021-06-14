@@ -15,13 +15,13 @@ let profileController = {
               .catch((err)=> `Error: ${err}`) 
  
         
-       // res.render ("profile", {productos: detalleProducto.lista})
+       
     },
   
 show: (req, res)=>{
           let primaryKey = req.params.id;
         usuarios.findByPk(primaryKey, {
-         //   include: [{association: 'comentarios'},]
+         
         })
      
           .then(resultados => res.render('profile', {resultados}) )
