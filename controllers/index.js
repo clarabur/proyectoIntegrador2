@@ -2,21 +2,26 @@ const db = require ('../database/models')
 
 const productos = db.Producto
 
-const op = db.sequelize.Op
+const op = db.sequelize.Op;
+
 //var detalleProducto  = require ("../data/products")
 
 let indexController = {
 
-    index: (req, res)=>{
-            productos.findAll()
+    index: (req, res)=>{  
+      
+      productos.findAll()
           
-         .then((resultados)=> res.render('index', {resultados}))
+         .then((resultados)=> 
+        
+        res.render('index', {resultados})
+         )
          .catch((err)=> `Error: ${err}`) 
         },
         show: (req, res)=>{
               let primaryKey = req.params.id;
             productos.findByPk(primaryKey, {
-               include: [{association: 'comentario'}, {association: 'usuarios'}]
+              // include: [{association: 'comentario'}, {association: 'usuarios'}]
             })
          
               .then(resultados =>   
@@ -37,9 +42,6 @@ let indexController = {
             .catch((err)=>console.log (err) ) 
         },
        
-   
- 
-    
     // ordenar productos de manera descendentes
 
   store: (req, res)=>{

@@ -52,7 +52,7 @@ let config = {
 
     const Usuario = sequelize.define(alias, cols, config)
   
-    Usuario.associate = (models)=>{
+    /* Usuario.associate = (models)=>{
         // Relacion
         
         Usuario.hasMany( models.Comentario , {
@@ -65,6 +65,6 @@ let config = {
             foreignKey: 'productos'
         })
     }
-  
+   */
     return Usuario;
 }
