@@ -4,72 +4,65 @@
 <%-include("./partials/head.ejs")%>
 
 <body>
-	
+
 	<!-- Header -->
 	<%-include("./partials/header.ejs")%>
 	<!-- /Header -->
-	
+
 	<!-- product detail -->
-	
 
-			
-						<div class="container products-wrapper">
-							<div class="d-flex align-items-center">
-								<h2 class="titulo-producto title"><%=resultados.nombre%></h2> 
-								<p class="product-detail-description">
-					
-									<div class="Agregar">
-										<button type="submit">
-											<b> <a href="/profile">
-												<i class="fas fa-shopping-bag"></i>
-												<i>Agregar a mis compras</i>
-											</a></b> <br/>
-									   </button>
-									</div>
-								</p>
+
+
+	<div class="container products-wrapper">
+		<div class="d-flex align-items-center">
+			<h2 class="titulo-producto title"><%=resultados.nombre%></h2>
+			<p class="product-detail-description">
+
+				<div class="Agregar">
+					<button type="submit">
+						<b> <a href="/profile">
+								<i class="fas fa-shopping-bag"></i>
+								<i>Agregar a mis compras</i>
+							</a></b> <br />
+					</button>
+				</div>
+			</p>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<article class="col-12 col-lg-8 product-detail-info">
+					<img src="<%=resultados.image%>" alt="" class="product-detail-img">
+					<p class="product-detail-description">
+						<%=resultados.descripcion%></p>
+				</article>
+
+				<div class="col-12 col-lg-4">
+					<section class="comments">
+						<% resultados.comentario.forEach(comment => { %>
+						<article>
+							<img src="/images/users/<%= comment.usuario.avatar%> " alt="Foto de usuario">
+							<div class="data">
+								<p class="user">
+									<strong> <a
+											href="/profile/detalle/<%= comment.usuario.id %> "><%=comment.usuario.nombre%> <%=comment.usuario.apellido%>: </a>
+									</strong>
+									<%= comment.comentario %></p>
 							</div>
-							<div class="product-detail">
-								<div class="row">
-									<article class="col-12 col-lg-8 product-detail-info">
-										<img src="<%=resultados.image%>" alt="" class="product-detail-img">
-										<p class="product-detail-description">
-											<%=resultados.descripcion%></p>
-									</article>
-									<article>
- 	        
-										<div class="data">
-											<p class="user" >
-											    
-												<%for(let i = 0; i<resultados.usuario.length; i+=1){ %>
-													<a href="/profile/detalle/<%= resultados.usuario[i].id %>" > </span class="badge bg-info"><%= resultados.usuario[i].nombre %></span></a>
-												 	
-													<% } %>
-										  
-												<%for(let i = 0; i<resultados.comentario.length; i+=1){ %>
-													<p class="card-text"></span class="badge bg-info"><%= resultados.comentario[i].comentario %></span></p>
-												<% } %>
-												</div>
-										<br>
-										<form class="form" action="" method="POST">
-											<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-											<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-										</form>
-									</article>
-									
-									
-									
-									
-								</div>
-							</div>
-						
+						</article>
+						<% }) %>
+					</section>
 
-	</div>
-	<!-- /product detail -->
+					<form class="form" action="/" method="GET">
+						<input id="comentario" type="text" value="" placeholder="Agregar comentario">
+						<button id="boton-agregar" type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+					</form>
+					</div>
 
-	<!-- footer -->
-	<%-include("./partials/footer.ejs")%>
-	
-	<!-- /footer -->
+						<!-- footer -->
+						<%-include("./partials/footer.ejs")%>
 
-</body>	
+						<!-- /footer -->
+
+</body>
+
 </html>

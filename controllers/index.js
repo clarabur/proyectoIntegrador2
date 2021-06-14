@@ -19,9 +19,12 @@ let indexController = {
   },
   show: (req, res) => {
     let primaryKey = req.params.id;
-    productos.findByPk(primaryKey, {
+    db.Producto.findByPk(primaryKey, {
         include: [{
-          association: 'comentario'
+          association: 'comentario',
+          include: [{
+            association: 'usuario'
+          }]
         }, {
           association: 'usuario'
         }]
