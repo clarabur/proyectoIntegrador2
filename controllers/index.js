@@ -2,7 +2,6 @@ const db = require('../database/models')
 
 const op = db.sequelize.Op;
 
-//var detalleProducto  = require ("../data/products")
 
 let indexController = {
 
@@ -10,31 +9,18 @@ let indexController = {
 
     db.Producto.findAll()
 
-      .then(resultado => {
-
-        res.render('index', {
-          resultados: resultado
-        })
+      .then(resultado => { res.render('index', { resultados: resultado })
       })
+
   },
+
   show: (req, res) => {
     let primaryKey = req.params.id;
     db.Producto.findByPk(primaryKey, {
-        include: [{
-          association: 'comentario',
-          include: [{
-            association: 'usuario'
-          }]
-        }, {
-          association: 'usuario'
-        }]
+        include: [{ association: 'comentario', include: [{ association: 'usuario'}] }, { association: 'usuario' }]
       })
 
-      .then(resultados =>
-        //console.log (resultados)
-        res.render('product', {
-          resultados
-        }))
+      .then(resultados =>  res.render('product', {resultados }))
       .catch((err) => `Error: ${err}`)
 
 
