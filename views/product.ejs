@@ -34,6 +34,7 @@
 					<img src="<%=resultados.image%>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%=resultados.descripcion%></p>
+						<p class="product-detail-description"></span>Creado por: <%= resultados.usuario.nombre %></span></p>
 				</article>
 
 				<div class="col-12 col-lg-4">
@@ -50,7 +51,7 @@
 				</div>
 						</article>
 						<% }) %>
-					</section>
+					
 
 					<form class="form" action="/" method="GET">
 						<input id="comentario" type="text" value="" placeholder="Agregar comentario">

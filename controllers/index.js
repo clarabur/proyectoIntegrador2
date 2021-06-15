@@ -7,7 +7,11 @@ let indexController = {
 
   index: (req, res) => {
 
-    db.Producto.findAll()
+    db.Producto.findAll({
+      include: [
+        {association: 'usuario'}
+      ]
+    })
 
       .then(resultado => { res.render('index', { resultados: resultado })
       })
