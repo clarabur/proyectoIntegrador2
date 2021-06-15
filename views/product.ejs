@@ -34,7 +34,8 @@
 					<img src="<%=resultados.image%>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%=resultados.descripcion%></p>
-						<p class="product-detail-description"></span>Creado por: <%= resultados.usuario.nombre %></span></p>
+						<a class="product-detail-description"
+						href="/profile/detalle/<%= resultados.usuario.id %> "> Creado por: <%= resultados.usuario.nombre %> </a>
 				</article>
 
 				<div class="col-12 col-lg-4">
