@@ -55,7 +55,27 @@ let indexController = {
 
     })
   },
-
+  borrar: (req, res)=>{
+    let primaryKey = req.params.id;
+    db.Producto.destroy({
+        where: {
+            id: primaryKey
+        }
+    })
+    .then(()=> res.redirect('/'))
+    .catch(err=> console.log(err))
+},
+destroy: (req, res)=>{
+  let primaryKey = req.params.id;
+  //console.log(primaryKey);
+   db.Producto.destroy({
+      where: {
+          id: primaryKey
+      }
+  })
+  .then(()=> res.redirect('/'))
+  .catch(err=> console.log(err))
+},
 }
 
 module.exports = indexController;
