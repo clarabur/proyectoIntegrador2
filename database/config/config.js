@@ -6,7 +6,10 @@ module.exports= {
     "database": "programacion2",
     "host": "127.0.0.1",
     'port': '8889',
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define":{
+      "onDelete":"cascade"
+    }
   },
   "test": {
     "username": "root",

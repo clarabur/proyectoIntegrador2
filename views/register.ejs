@@ -28,7 +28,7 @@
                           <p class= “alert”> <%= errors.message %> </p> 
                         <% } %>
                       
-                        <form class="login-container" action="/register"  method="POST" >
+                        <form class="login-container" action="/register"  method="POST"  enctype="multipart/form-data">
                             
                             <p><input  title="Se necesita un nombre" type="text" placeholder="Nombre" name="first_name" required=""></p>
                             <p><input type="text" placeholder="Apellido" name="last_name" required></p>
