@@ -33,7 +33,7 @@ let indexController = {
 
   },
   search: (req, res) => {
-    let buscadorProductos = req.query.search
+    let buscadorProductos = req.query.search;
     db.Producto.findAll({
         where: [{
           nombre: {
