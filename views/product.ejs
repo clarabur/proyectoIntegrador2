@@ -26,10 +26,14 @@
 							</a></b> <br />
 					</button>
 				</div>
-				
+				<% if(locals.user = locals.user ){ %>
 				<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
 					<button class="btn btn-danger" type="submit">Borrar</button>
-				</form>
+				</form> 
+				<% }) %> 
+				
+				
+
 			</p>
 		</div>
 		<div class="product-detail">

@@ -1,7 +1,22 @@
 
 <!-- Header -->
 <header class="main-header">
-    <%  if (! locals.user) { %> 
+    <% if(locals.user){ %>
+        <h2>Hola: <%= user.nombre %></h2>
+        <form action="/login/logout" method="POST">
+          <button type="submit">Cerra sesion</button>
+        </form>
+        <a href="/product-add" class="Boton"> <ul class="left-navbar1">
+            <li><i class="fas fa-plus"></li></i>
+            </ul>
+        </a>
+        <ul class="right-navbar">
+            <li><a href="/profile"> Mi Perfil <i class="fas fa-user"></i>
+                </a>
+            </li>
+      <% } %>
+      
+
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-5 col-md-2">
@@ -48,63 +63,7 @@
            
         </div>
     
-    <% } else { %> 
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-5 col-md-2">
-                    <a href="/" class="main-header_home-link">
-                        <img src="/images/logo2.jpeg">
-                    </a>
-                </div>
-    
-                <div class="col-7 col-md-6">
-                    <form action="" method="GET" class="search-form">
-                        <input type="text" name="search" placeholder="Buscar productos, marcas y más" class="search-form_input">
-                        <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-    
-                <div class="col-12 col-md-4">
-                    <a class="main-header_credit-link">
-                        <i class="far fa-heart"></i>
-                        Renova tu vestidor en un solo lugar.
-                    </a>
-                    
-                </div>
-                </div>
-        
-                <button class="btn-toggle-navbar">
-                    <i class="fas fa-bars"></i>
-                </button>
-        
-                <nav class="main-navbar">
-                    <ul class="left-navbar">
-                        <li><a href="/">Todos los productos</a></li>
-                    </ul>
-                    <% if(locals.user){ %>
-                        <a href="/product-add" class="Boton"> <ul class="left-navbar1">
-                            <li><i class="fas fa-plus"></li></i>
-                            </ul>
-                        </a>
-                      <% } %>
-                   
-                    
-        
-                    <ul class="right-navbar">
-                        <li><a href="/profile"> Mi Perfil <i class="fas fa-user"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <form action="/logout" method="POST">
-                                <button id="pink" class="logout" type="submit"> 
-                                     Cerrar sesión <i class="fas fa-sign-in-alt"></i> 
-                                </button>
-                            </form>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        <% } %>
+  
     </header>
        
 
