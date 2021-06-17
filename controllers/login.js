@@ -5,36 +5,43 @@ const bcrypt = require('bcryptjs');
 
 let loginController = {
 
-    login: (req, res)=>{
-        res.render ("login")
+    index: (req, res)=>{
+        if(req.session.user != undefined){
+            return res.redirect('/')
+        } else {
+            return res.render('login')
+        }
     },
 
-    loginPost: (req,res)=>{
+    login: (req,res)=>{
+        let errors = {};
         db.Usuario.findOne ({
-            where: {
-                user: req.body.usuario 
-            }
-        }) .then (result=>{
+            where: { mail: req.body.email }
+        }) 
+        .then( (user) => {
+            if(user==null){
+               errors.login = "Email es incorrecto";
+               res.locals.error = errors;
+               return res.render('login') 
+            } else if (bcrypt.compareSync(req.body.password, user.password) == false){
+                errors.login = "Contraseña Incorrecta";
+                res.locals.errors = errors;
+               return res.render('login') 
+            } else {
+                req.session.user = user;
 
-            if (result && bcrypt.compareSync(req.body.password,result.contraseña)) {
-                req.session.user = {
-                    id: result.id,
-                    name: result.user
-                };
-                if (req.body.remember) {
-                    res.cookie('userId', result.id, {
-                        maxAge: 1000 * 60 * 5
-                    });
+                if(req.body.rememeberme != undefined){
+                    res.cookie('userID', user.id, {maxAge: 1000 * 60 * 5});
                 }
-                    
             }
-            res.redirect('/');
+            return res.redirect('/');
         })
+        .catch( err => console.log(err))
     },
 
     logout: (req,res) => {
         req.session.destroy()
-        res.clearCookie ("userId")
+        res.clearCookie ("userID")
         res.redirect ("/")
     }
 }

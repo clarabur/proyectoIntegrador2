@@ -20,7 +20,11 @@
 					<div class="login-triangle"></div>
 					
 					<h2 class="login-header">INICIAR SESION</h2>
-				  
+				
+					<% if(locals.errors){ %>
+						<p class="alert" > <%= errors.login %><p>
+					<% } %>
+					
 					<form class="login-container" action="/login" method="POST">
 					  <p><input type="text" placeholder="Usuario" name="usuario" required></p>
 					  <p><input type="password" placeholder="Contraseña" name="password" required></p>
