@@ -81,11 +81,13 @@
                     <ul class="left-navbar">
                         <li><a href="/">Todos los productos</a></li>
                     </ul>
-        
-                    <a href="/product-add" class="Boton"> <ul class="left-navbar1">
-                        <li><i class="fas fa-plus"></li></i>
-                        </ul>
-                    </a> 
+                    <% if(locals.user){ %>
+                        <a href="/product-add" class="Boton"> <ul class="left-navbar1">
+                            <li><i class="fas fa-plus"></li></i>
+                            </ul>
+                        </a>
+                      <% } %>
+                   
                     
         
                     <ul class="right-navbar">
