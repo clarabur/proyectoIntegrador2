@@ -121,4 +121,16 @@ INSERT INTO comentarios VALUES (default, 3, 10, "Prenda de muy buena calidad, mu
 INSERT INTO comentarios VALUES (default, 4, 10, "No lo recomiendo, parecía mas lindo de lo que es", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
 INSERT INTO comentarios VALUES (default, 5, 10, "Excenlente producto!", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
 
+INSERT INTO comentarios VALUES (default, 1, 11, "Excenlente calidad!", '2016-07-04 03:00:00','2016-07-04 03:00:00');
+INSERT INTO comentarios VALUES (default, 2, 11, "Me encanto el producto", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+INSERT INTO comentarios VALUES (default, 3, 11, "Prenda de muy buena calidad, muy suave al tacto", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+INSERT INTO comentarios VALUES (default, 4, 11, "No lo recomiendo, parecía mas lindo de lo que es", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+INSERT INTO comentarios VALUES (default, 5, 11, "Excenlente producto!", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+
+INSERT INTO comentarios VALUES (default, 1, 12, "Excenlente calidad!", '2016-07-04 03:00:00','2016-07-04 03:00:00');
+INSERT INTO comentarios VALUES (default, 2, 12, "Me encanto el producto", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+INSERT INTO comentarios VALUES (default, 3, 12, "Prenda de muy buena calidad, muy suave al tacto", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+INSERT INTO comentarios VALUES (default, 4, 12, "No lo recomiendo, parecía mas lindo de lo que es", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+INSERT INTO comentarios VALUES (default, 5, 12, "Excenlente producto!", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+
 
