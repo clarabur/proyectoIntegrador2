@@ -42,11 +42,11 @@ FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
 FOREIGN KEY (producto_id) REFERENCES productos(id)
 );
 
-INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, avatar)VALUES (default, "Daira", "Sapir", "dairasapir@gmail.com", "2001-11-20", "1123667492", "Daira2", "/images/foto 1.jpeg");
-INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, avatar) VALUES (default, "Clara", "Bur" , "clarabur@gmail.com" , "2001/05/10", "1540291928",  "Clara1", "/images/foto 1.jpeg");
-INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, avatar)VALUES (default, "Cala", "Ruggeri", "calaruggeri@gmail.com", "2001/12/26", "1146897903", "CalaRugg" , "/images/foto 1.jpeg");
-INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, avatar)VALUES (default, "Agostina", "Cervio", "agoscervio@gmail.com" , "2002/03/17", "1144075773", "Agos2002", "/images/foto 1.jpeg");
-INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, avatar)VALUES (default, "Lola", "Torres", "lolatorres@gmail.com", "2003/06/18", "114686777", "LolaTorres", "/images/foto 1.jpeg");
+INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, user, avatar)VALUES (default, "Daira", "Sapir", "dairasapir@gmail.com", "2001-11-20", "1123667492", "Daira2","dairi" ,"/images/foto 1.jpeg");
+INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, user, avatar) VALUES (default, "Clara", "Bur" , "clarabur@gmail.com" , "2001/05/10", "1540291928",  "Clara1","clarita" , "/images/foto 1.jpeg");
+INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, user,  avatar)VALUES (default, "Cala", "Ruggeri", "calaruggeri@gmail.com", "2001/12/26", "1146897903", "CalaRugg" , "cala123" , "/images/foto 1.jpeg");
+INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, user ,avatar)VALUES (default, "Agostina", "Cervio", "agoscervio@gmail.com" , "2002/03/17", "1144075773", "Agos2002","agos34" , "/images/foto 1.jpeg");
+INSERT INTO usuarios (id,nombre,apellido,mail,fecha,telefono,contraseña, user, avatar)VALUES (default, "Lola", "Torres", "lolatorres@gmail.com", "2003/06/18", "114686777", "LolaTorres", "lolita2" ,"/images/foto 1.jpeg");
 
 INSERT INTO productos (id, image, nombre, temporada, descripcion, usuario_id) VALUES (default, "/images/products/bazer.jpeg", "Blazer negro", "Otoño 21", "Blazer negro de algodon y corte sastre confeccionado en tejido semi elastizado que aporta excelente calce y comodidad a la prenda. Forrería de mangas de satén opaco con un bajo porcentaje de elastano para acompañar el movimiento del cuerpo y el tejido exterior de la prenda. Forrería de cuerpo con crepe de satén semi brilloso. Silueta entallada y largo por debajo de la cadera. Posee un pequeño bolsillo ojal del lado derecho y dos bolsillos ojales con tapa a los costados de la prenda.", "1" );
 INSERT INTO productos (id, image, nombre, temporada, descripcion, usuario_id) VALUES (default, "/images/products/nueva.webp", "Saco Largo", "Invierno 21", "Saco de invierno cuadrille con botones confeccionado en tejido paño, súper suave y abrigado. Está completamente forrado en satén con un leve porcentaje de elastano para acompañar el movimiento del cuerpo y el tejido exterior de la prenda. Posee detalles internos de vivos en satén brillante y espaldín en tela base con chapita con cadena y logo.", "2" );
@@ -132,5 +132,6 @@ INSERT INTO comentarios VALUES (default, 2, 12, "Me encanto el producto", '2016-
 INSERT INTO comentarios VALUES (default, 3, 12, "Prenda de muy buena calidad, muy suave al tacto", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
 INSERT INTO comentarios VALUES (default, 4, 12, "No lo recomiendo, parecía mas lindo de lo que es", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
 INSERT INTO comentarios VALUES (default, 5, 12, "Excenlente producto!", '2016-07-04 03:00:00','2016-07-04 03:00:00' );
+
 
 
