@@ -35,15 +35,11 @@ let indexController = {
   search: (req, res) => {
     let buscadorProductos = req.query.search;
     db.Producto.findAll({
-        where: [{
-          nombre: {
-            [op.like]: `%${buscadorProductos}%`
+        where: [{ nombre: {[op.like]: `%${buscadorProductos}%`
           }
         }]
       })
-      .then(resultados => res.render('search-results', {
-        resultados: resultados
-      }))
+      .then(resultados => res.render('search-results', {resultados: resultados }))
       .catch((err) => console.log(err))
   },
 
