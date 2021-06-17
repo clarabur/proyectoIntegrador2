@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', indexController.index) 
 router.get('/detalle/:id', indexController.show);
-router.post ('/', indexController.store)
+
 router.get('/search', indexController.search)
 router.post('/detalle/:id', indexController.destroy);
 router.get('/borrar/:id', indexController.borrar)

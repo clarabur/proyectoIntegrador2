@@ -14,14 +14,18 @@ let loginController = {
     },
 
     login: (req,res)=>{
+       
         let errors = {};
+
         db.Usuario.findOne ({
-            where: { mail: req.body.email }
+            where: [{ mail: req.body.email }]
         }) 
         .then( (user) => {
-            if(user==null){
+            
+            if(user==null){ 
                errors.login = "Email es incorrecto";
                res.locals.error = errors;
+               
                return res.render('login') 
             } else if (bcrypt.compareSync(req.body.password, user.password) == false){
                 errors.login = "Contraseña Incorrecta";
@@ -30,7 +34,7 @@ let loginController = {
             } else {
                 req.session.user = user;
 
-                if(req.body.rememeberme != undefined){
+                if(req.body.recuerdame != undefined){
                     res.cookie('userID', user.id, {maxAge: 1000 * 60 * 5});
                 }
             }

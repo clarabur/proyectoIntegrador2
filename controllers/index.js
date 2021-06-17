@@ -10,7 +10,10 @@ let indexController = {
     db.Producto.findAll({
       include: [
         {association: 'usuario'}
-      ]
+      ],
+      order: [
+        ['lanzamiento', 'DESC']
+      ],
     })
 
       .then(resultado => { res.render('index', { resultados: resultado })
@@ -44,17 +47,9 @@ let indexController = {
       .catch((err) => console.log(err))
   },
 
-  // ordenar productos de manera descendentes
+ 
 
-  store: (req, res) => {
-    db.Producto.findAll({
-      order: [
-        ['lanzamiento', 'DESC']
-      ],
-
-
-    })
-  },
+  
   borrar: (req, res)=>{
     let primaryKey = req.params.id;
     db.Producto.destroy({
