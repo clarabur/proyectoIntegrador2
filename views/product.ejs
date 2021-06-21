@@ -18,7 +18,14 @@
 			<h2 class="titulo-producto title"><%=resultados.nombre%></h2>
 			<p class="product-detail-description">
 
-				<div class="Agregar">
+				
+				<% if(locals.user = locals.user){ %>
+				<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
+					<button class="btn btn-danger" type="submit">Borrar</button>
+				</form> 
+				<% } %> 
+				<% if(locals.user){ %>	
+					<div class="Agregar">
 					<button type="submit">
 						<b> <a href="/profile">
 								<i class="fas fa-shopping-bag"></i>
@@ -26,13 +33,7 @@
 							</a></b> <br />
 					</button>
 				</div>
-				<% if(locals.user = locals.user){ %>
-				<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
-					<button class="btn btn-danger" type="submit">Borrar</button>
-				</form> 
 				<% } %> 
-				
-				
 
 			</p>
 		</div>
