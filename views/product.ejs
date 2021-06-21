@@ -23,6 +23,9 @@
 				<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
 					<button class="btn btn-danger" type="submit">Borrar</button>
 				</form> 
+				
+				<a href="/edit/<%= resultados.id %>" class="btn btn-info">Editar</a>
+
 				<% } %> 
 				<% if(locals.user){ %>	
 					<div class="Agregar">
@@ -33,10 +36,17 @@
 							</a></b> <br />
 					</button>
 				</div>
+
+				<form class="form" action="/" method="GET">
+					<input id="comentario" type="text" value="" placeholder="Agregar comentario">
+					<button id="boton-agregar" type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+				</form>
 				<% } %> 
 
 			</p>
 		</div>
+		
+				
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
@@ -63,10 +73,6 @@
 						<% }) %>
 					
 
-					<form class="form" action="/" method="GET">
-						<input id="comentario" type="text" value="" placeholder="Agregar comentario">
-						<button id="boton-agregar" type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
 					</div>
 			</div>
 		</div>
