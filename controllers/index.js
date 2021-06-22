@@ -57,8 +57,8 @@ let indexController = {
         },
     })
     
+    .then(resultados => res.render('search-results', {resultados}))
     
-    .then(resultados => res.render('search-results', {resultados }))
     .catch ((errors)=> {
           console.log("Error de conexion: " + errors.message);
           res.render ('error', {errors:"Error de conexion: " + errors.message});
