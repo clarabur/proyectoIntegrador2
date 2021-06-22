@@ -11,13 +11,14 @@ let indexController = {
   index: (req, res) => {
 
     db.Producto.findAll({
-      include: [
-        {association: 'usuario'}
-      ],
+      include: [{ association: 'usuario' }],
+      
       order: [
         ['lanzamiento', 'DESC']
       ],
+    // limit: 5,
     })
+   
 
       .then(resultado => { res.render('index', { resultados: resultado })
       })
