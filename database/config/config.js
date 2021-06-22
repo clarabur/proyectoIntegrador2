@@ -3,7 +3,7 @@ module.exports= {
   "development": {
     "username": "root",
     "password": "root",
-    "database": "programacion2",
+    "database": "programacion2", //no seria Basededatos como se llama nuestro sql???
     "host": "127.0.0.1",
     'port': '8889',
     "dialect": "mysql",
