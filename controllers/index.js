@@ -1,6 +1,9 @@
-const db = require('../database/models')
+let db = require('../database/models');
 
-const op = db.sequelize.Op;
+const Op = db.Sequelize.Op;
+
+const producto = db.Producto;
+
 
 
 let indexController = {
@@ -32,18 +35,21 @@ let indexController = {
 
 
   },
+
+  // BUSCADOR
   search: (req, res) => {
     let buscadorProductos = req.query.search;
     db.Producto.findAll({
-        where: [{ nombre: {[op.like]: `%${buscadorProductos}%`
-          }
-        }]
+        where: {
+          nombre: {[Op.like]: `%${buscadorProductos}%`}
+          
+        },
+        //VA PRODUCTOS??? 
+      
       })
-      .then(resultados => res.render('search-results', {resultados: resultados }))
-      .catch((err) => console.log(err))
+        .then(resultados => res.render('search-results', {resultados }))
+        .catch((err) => console.log(err))
   },
-
- 
 
   
   borrar: (req, res)=>{
