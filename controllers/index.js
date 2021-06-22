@@ -42,24 +42,28 @@ let indexController = {
   search: (req, res) => {
     let buscadorProductos = req.query.search;
     db.Producto.findAll({
-        where: {
+      include: [
+        {association: 'usuario'}
+      ],
+      
+      where: {
           nombre: {[Op.like]: `%${buscadorProductos}%`}
-          .then(resultados => res.render('search-results', {resultados }))
+          
+        },
+
+      where: {
+          descripcion: {[Op.like]: `%${buscadorProductos}%`}
+          
         },
     })
-
-    db.Producto.findAll({
-      where: {
-        descripcion: {[Op.like]: `%${buscadorProductos}%`}
-        .then(resultados => res.render('search-results', {resultados }))
-      },
-  })
-  
-    //.catch((err) => console.log(err))
-  .catch ((error)=> {
-          console.log("Error de conexion: " + error.message);
-          res.render ('error', {error:"Error de conexion: " + error.message});
+    
+    
+    .then(resultados => res.render('search-results', {resultados }))
+    .catch ((errors)=> {
+          console.log("Error de conexion: " + errors.message);
+          res.render ('error', {errors:"Error de conexion: " + errors.message});
         })
+    //.catch((err) => console.log(err))
   },
 
   
