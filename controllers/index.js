@@ -23,16 +23,18 @@ let indexController = {
       })
 
   },
-
+  
   show: (req, res) => {
     let primaryKey = req.params.id;
     db.Producto.findByPk(primaryKey, {
         include: [{ association: 'comentario', include: [{ association: 'usuario'}] }, { association: 'usuario' }]
       })
-
+      
       .then(resultados =>  res.render('product', {resultados }))
       .catch((err) => `Error: ${err}`)
-
+     
+  
+      
 
   },
 
@@ -66,13 +68,33 @@ destroy: (req, res)=>{
   let primaryKey = req.params.id;
   //console.log(primaryKey);
    db.Producto.destroy({
-      where: {
+      where: [{
           id: primaryKey
-      }
+      }]
   })
   .then(()=> res.redirect('/'))
   .catch(err=> console.log(err))
 },
+edit: (req, res)=>{
+  let primaryKey = req.params.id;
+  db.Producto.findByPk(primaryKey)
+      .then(resultados => res.render('product-edit', { resultados }))
+      .catch(err => console.log(err))
+}, 
+update: (req, res)=>{   
+  let primaryKey = req.params.id;
+  let productoActualizar = req.body
+  db.Producto.update(
+      productoActualizar, 
+      {
+          where: [{
+              id: primaryKey
+          }]
+      }
+  )
+      .then(()=> res.redirect('/'))
+      .catch(err => console.log(err))
+}
 }
 
 module.exports = indexController;
