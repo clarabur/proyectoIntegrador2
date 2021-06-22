@@ -18,9 +18,15 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-			
-			
+			<!--ME GUSTARIA HACER
+			QUE CUANDO NO ENCUENTRA NADA, EN VEZ DE TIRAR "RESULTADOS DE BUSQUEDA"
+		TIRE UN "OOPS, NO ENCONTRAMOS RESULTADOS..." PERO NO SE BIEN COMO HACERLO SIN ROMPER TODO-->
 
+			<%  if(resultados == undefined || resultados == 0 ){  %> 
+				<h1>Oops, no encontramos resutados para tu busqueda...</h1>
+			<% } %>
+
+			
 			<% for(let i=0; i< resultados.length; i+=1){  %>
 				
 				<div class="col-12 col-sm-6 col-lg-3">
