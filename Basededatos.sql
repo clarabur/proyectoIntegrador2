@@ -27,7 +27,7 @@ lanzamiento  DATE ,
 usuario_id INT UNSIGNED,
 createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-CONSTRAINT usuario_producto_fk FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+CONSTRAINT usuario_producto_fk FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
 
