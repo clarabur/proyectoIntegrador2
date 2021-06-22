@@ -57,14 +57,25 @@ let indexController = {
         },
     })
     
-    .then(resultados => res.render('search-results', {resultados}))
+    .then(resultados => res.render('search-results', {resultados: resultados}))
     
     .catch ((errors)=> {
-          console.log("Error de conexion: " + errors.message);
-          res.render ('error', {errors:"Error de conexion: " + errors.message});
+
+      console.log("Error de conexion: " + errors.message);
+        res.render ('error', {errors:"Error de conexion: " + errors.message});
         })
-    //.catch((err) => console.log(err))
-  },
+      },
+
+      // NO LOGRO HACER QUE ME FUNCIONE EL CATCH PARA MENSAJE DE ERROR
+
+      /*if(req.producto = null){
+        return ("Oops, no encontramos lo que estas buscando"); 
+      }else{
+        return ("Esto es lo que encontramos para vos...");
+      }
+      
+      .catch((err) => console.log(err))*/
+
 
   
   borrar: (req, res)=>{
