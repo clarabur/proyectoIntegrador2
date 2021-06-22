@@ -44,13 +44,22 @@ let indexController = {
     db.Producto.findAll({
         where: {
           nombre: {[Op.like]: `%${buscadorProductos}%`}
-          
+          .then(resultados => res.render('search-results', {resultados }))
         },
-        //VA PRODUCTOS??? 
-      
-      })
+    })
+
+    db.Producto.findAll({
+      where: {
+        descripcion: {[Op.like]: `%${buscadorProductos}%`}
         .then(resultados => res.render('search-results', {resultados }))
-        .catch((err) => console.log(err))
+      },
+  })
+  
+    //.catch((err) => console.log(err))
+  .catch ((error)=> {
+          console.log("Error de conexion: " + error.message);
+          res.render ('error', {error:"Error de conexion: " + error.message});
+        })
   },
 
   
