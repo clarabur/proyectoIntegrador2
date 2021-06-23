@@ -26,9 +26,10 @@ let loginController = {
                 errors.message = "Email es incorrecto."; 
                 res.locals.errors = errors; 
                return res.render('login') 
-            } else if (bcrypt.compareSync(req.body.password, user.password) == false){
-                errors.message = "Contraseña Incorrecta";
-                res.locals.errors = errors;
+            } else if (bcrypt.compareSync(req.body.contraseña, user.contraseña) == false){
+                
+             errors.message = "Contraseña Incorrecta";
+             res.locals.errors = errors;
                return res.render('login') 
             } else {
                 req.session.user = user;

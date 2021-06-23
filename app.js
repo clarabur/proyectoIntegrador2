@@ -9,7 +9,7 @@ let db = require ('./database/models')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
-var logoutRouter = require('./routes/logout');
+
 var profileRouter = require('./routes/profile');
 var registerRouter = require('./routes/register');
 var productaddRouter = require('./routes/product-add');
@@ -64,7 +64,7 @@ app.use (function (req, res, next){
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
-app.use('/logout', logoutRouter);
+
 app.use('/profile', profileRouter);
 app.use('/register', registerRouter);
 app.use('/product-add', productaddRouter);
