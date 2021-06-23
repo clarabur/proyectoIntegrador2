@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+<%-include("./partials/head.ejs")%>
+
+<body background="/images/fotoproducto.jpeg" class="fondo">
+	
+	<!-- Header -->
+	<%-include("./partials/header.ejs")%>
+	<!-- /Header -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<!-- Show the "ultimos" products -->
+			<h2 class="col-12"> 
+				<div class="login">
+					<div class="login-triangle"></div>
+                    <h2 class="login-header">Editando el producto <%= resultados.nombre %></h2>
+
+
+<form class="login-container" action="/edit/<%=resultados.id%>" method="POST">
+    <p>
+        <input type="text"  value="<%= resultados.nombre %>" class="form-control"  name="nombre" placeholder="nombre">
+    </p>
+    <p>
+        <input type="text"  class="form-control"  name="nombre" placeholder="comentario">
+    <p>
+        <input type="file"  name="image" id="">
+    </p>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+</form>
+
+</div>
+</h2>
+</div>
+</div>
+<%- include('partials/footer.ejs') %>
+</body>
+
+</html>
