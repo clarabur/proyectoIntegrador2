@@ -1,5 +1,5 @@
 const db = require('../database/models')
-
+const bcrypt = require ('bcryptjs')
 let profileeditController = {
 
     edit: (req, res)=>{
