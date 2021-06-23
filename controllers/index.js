@@ -39,7 +39,7 @@ let indexController = {
     db.Producto.findAll({
         where: [{ nombre: {[op.like]: `%${buscadorProductos}%` }, descripcion: {[op.like]: `%${buscadorProductos}%` } }]
       })
-      .then(resultados => res.render('search-results', {resultados}))
+      .then(resultados => res.render('search-results', {resultados: resultados}))
       .catch((err) => console.log(err))
   },
 
@@ -70,7 +70,7 @@ destroy: (req, res)=>{
 edit: (req, res)=>{
   let primaryKey = req.params.id;
   db.Producto.findByPk(primaryKey)
-      .then(resultados => res.render('product-edit', { resultados }))
+      .then(resultados => res.render('product-edit', { resultados: resultados }))
       .catch(err => console.log(err))
 }, 
 update: (req, res)=>{   
@@ -86,7 +86,9 @@ update: (req, res)=>{
   )
       .then(()=> res.redirect('/'))
       .catch(err => console.log(err))
-}
+},
+
+
 }
 
 module.exports = indexController;

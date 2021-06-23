@@ -3,8 +3,7 @@ const profileController = require('../controllers/profile');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', profileController.profile)
-router.get('/detalle/:id', profileController.show);
+router.get('/detalle/:id', profileController.profile);
 
 
 module.exports = router;

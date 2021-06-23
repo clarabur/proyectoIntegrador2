@@ -6,6 +6,7 @@ var router = express.Router();
 /* GET home page. */
 
 
-router.get('/', profileeditController.profileedit)
+router.get('/:id', profileeditController.edit)
+router.post('/', profileeditController.profileEdit)
 
 module.exports = router;
