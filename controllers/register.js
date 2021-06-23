@@ -21,7 +21,7 @@ let registerController = {
             telefono: req.body.phone,
             fecha: req.body.date,
             user: req.body.user,
-            contraseña:bcrypt.hashSync(req.body.password),
+            contraseña:bcrypt.hashSync(req.body.password),  
             avatar: req.body.avatar,
         }
         let errors = {};
@@ -57,7 +57,7 @@ let registerController = {
                        nombre: req.body.first_name,
                        apellido: req.body.last_name,
                         mail: req.body.email,
-                        contraseña:bcrypt.hashSync(req.body.password, 10),
+                        contraseña:bcrypt.hashSync(req.body.password, 10),  //(primero el dato a incriptar, deps la sal, hace q sea mas dificl d craquear eje 10 o 12)
                         telefono: req.body.phone,
                         fecha: req.body.date,
                         user: req.body.user,

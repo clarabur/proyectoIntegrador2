@@ -1,6 +1,9 @@
-const db = require('../database/models')
+let db = require('../database/models');
 
-const op = db.sequelize.Op;
+const Op = db.Sequelize.Op;
+
+const producto = db.Producto;
+
 
 
 let indexController = {
@@ -8,13 +11,14 @@ let indexController = {
   index: (req, res) => {
 
     db.Producto.findAll({
-      include: [
-        {association: 'usuario'}
-      ],
+      include: [{ association: 'usuario' }],
+      
       order: [
         ['lanzamiento', 'DESC']
       ],
+    // limit: 5,
     })
+   
 
       .then(resultado => { res.render('index', { resultados: resultado })
       })
@@ -34,18 +38,37 @@ let indexController = {
       
 
   },
+
+  // BUSCADOR
   search: (req, res) => {
-    let buscadorProductos = req.query.search
+    let buscadorProductos = req.query.search;
     db.Producto.findAll({
-        where: [{ nombre: {[op.like]: `%${buscadorProductos}%` }, descripcion: {[op.like]: `%${buscadorProductos}%` } }]
-      })
-      .then(resultados => res.render('search-results', {resultados: resultados}))
-      .catch((err) => console.log(err))
-  },
+      include: [
+        {association: 'usuario'}
+      ],
+      
+      where: {
+          nombre: {[Op.like]: `%${buscadorProductos}%`}
+         
+          
+          
+        },
 
- 
-
-  
+      where: {
+          descripcion: {[Op.like]: `%${buscadorProductos}%`}
+          
+        },
+    })
+    
+    .then(resultados => res.render('search-results', {resultados: resultados}))
+    
+    .catch ((errors)=> {
+      console.log("Error de conexion: " + errors.message);
+        res.render ('error', {errors:"Error de conexion: " + errors.message});
+        })
+    },
+    
+    
   borrar: (req, res)=>{
     let primaryKey = req.params.id;
     db.Producto.destroy({
