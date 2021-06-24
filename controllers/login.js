@@ -23,7 +23,7 @@ let loginController = {
         .then( (user) => {
             
             if(user==null){ 
-                errors.message = "Email es incorrecto."; 
+                errors.message = "Email es incorrecto"; 
                 res.locals.errors = errors; 
                return res.render('login') 
             } else if (bcrypt.compareSync(req.body.contraseña, user.contraseña) == false){

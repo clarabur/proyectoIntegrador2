@@ -88,24 +88,54 @@ destroy: (req, res)=>{
   .then(()=> res.redirect('/'))
   .catch(err=> console.log(err))
 },
+
+add: (req,res) => {
+  return res.render ('add')
+},
+
+storeProduct: (req,res) => {
+
+  let product = {
+    nombre: req.body.nombre,
+    descripcion: req.body.descripcion,
+    temporada: req.body.categoria,
+    lanzamiento: req.body.lanzamiento,
+    avatar: req.body.avatar
+  }
+
+  db.Producto.create (product)
+  .then(() => res.redirect ('/index'))
+  .catch(err => console.log (err))
+
+},
+
 edit: (req, res)=>{
   let primaryKey = req.params.id;
   db.Producto.findByPk(primaryKey)
       .then(resultados => res.render('product-edit', { resultados: resultados }))
       .catch(err => console.log(err))
 }, 
+
 update: (req, res)=>{   
   let primaryKey = req.params.id;
   let productoActualizar = req.body
+  /* if (req.session.user !=  locals.user){
+    errors.message = "email ya existe"
+    res.locals.errors = errors;
+  return res.render('/');
+    
+  } */
   db.Producto.update(
-      productoActualizar, 
-      {
-          where: [{
-              id: primaryKey
-          }]
-      }
-  )
-      .then(()=> res.redirect('/'))
+    productoActualizar,
+    {
+        where: [{
+            id: primaryKey
+        }]
+    }
+)
+.then(()=> res.redirect('/product'))
+  
+
       .catch(err => console.log(err))
 },
 

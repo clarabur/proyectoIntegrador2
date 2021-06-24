@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 const productaddController = require('../controllers/product-add');
 var router = express.Router();
 /* let multer = require('multer')
@@ -14,8 +14,8 @@ var storage = multer.diskStorage({
    
   var upload = multer({ storage: storage }) */
 /* GET home page. */
-router.get('/', productaddController.productadd)
+//router.get('/', productaddController.productadd)
 //router.post ('/', upload.single('avatar'),registerController.store)
 
 
-module.exports = router;
+//module.exports = router;

@@ -10,4 +10,5 @@ router.post('/detalle/:id', indexController.destroy);
 router.get('/borrar/:id', indexController.borrar)
 router.get('/edit/:id', indexController.edit) //muestra el formulario de creacion
 router.post('/edit/:id', indexController.update) //procesa la info
+
 module.exports = router;
