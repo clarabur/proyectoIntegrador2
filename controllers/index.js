@@ -20,7 +20,8 @@ let indexController = {
     })
    
 
-      .then(resultado => { res.render('index', { resultados: resultado })
+      .then(resultado => { 
+        res.render ('index', { resultados: resultado })
       })
 
   },
