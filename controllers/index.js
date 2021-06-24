@@ -49,16 +49,13 @@ let indexController = {
       ],
       
       where: {
-          nombre: {[Op.like]: `%${buscadorProductos}%`}
-         
           
-          
+          [Op.or]: [
+            { nombre: {[Op.substring]: buscadorProductos} },
+            { descripcion: {[Op.substring]: buscadorProductos}}
+          ]
         },
 
-      where: {
-          descripcion: {[Op.like]: `%${buscadorProductos}%`}
-          
-        },
     })
     
     .then(resultados => res.render('search-results', {resultados: resultados}))
