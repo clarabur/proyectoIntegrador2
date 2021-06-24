@@ -16,7 +16,7 @@ let indexController = {
       order: [
         ['lanzamiento', 'DESC']
       ],
-    // limit: 5,
+   
     })
    
 
