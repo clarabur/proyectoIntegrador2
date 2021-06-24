@@ -50,7 +50,7 @@ app.use(function(req, res, next) {
 
 app.use (function (req, res, next){
   if ( req.session.user){
-    res.locals = req.session.user
+    res.locals.user = req.session.user
     return next()
   }
   return next()
