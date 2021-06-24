@@ -24,6 +24,7 @@ module.exports = (sequelize, dataTypes)=> {
         type: dataTypes.DATE,
         notNull: true,
     }, 
+    
     usuario_id:{
         type: dataTypes.INTEGER,
         notNull: true,

@@ -89,8 +89,10 @@ destroy: (req, res)=>{
   .catch(err=> console.log(err))
 },
 
+//AGREGAR PRODUCTO
+
 add: (req,res) => {
-  return res.render ('add')
+  return res.render ('product-add')
 },
 
 storeProduct: (req,res) => {
@@ -100,11 +102,13 @@ storeProduct: (req,res) => {
     descripcion: req.body.descripcion,
     temporada: req.body.categoria,
     lanzamiento: req.body.lanzamiento,
-    avatar: req.body.avatar
+    image:`/images/products/${req.file.filename}`,
+    usuario_id: req.session.user.id,
+
   }
 
   db.Producto.create (product)
-  .then(() => res.redirect ('/index'))
+  .then(() => res.redirect ('/'))
   .catch(err => console.log (err))
 
 },
