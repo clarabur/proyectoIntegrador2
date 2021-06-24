@@ -123,15 +123,23 @@ edit: (req, res)=>{
 update: (req, res)=>{   
   let primaryKey = req.params.id;
   let productoActualizar = req.body
+  /* if (req.session.user !=  locals.user){
+    errors.message = "email ya existe"
+    res.locals.errors = errors;
+  return res.render('/');
+    
+  } */
   db.Producto.update(
-      productoActualizar, 
-      {
-          where: [{
-              id: primaryKey
-          }]
-      }
-  )
-      .then(()=> res.redirect('/'))
+    productoActualizar,
+    {
+        where: [{
+            id: primaryKey
+        }]
+    }
+)
+.then(()=> res.redirect('/product'))
+  
+
       .catch(err => console.log(err))
 },
 

@@ -6,4 +6,5 @@ var router = express.Router();
 router.get('/detalle/:id', profileController.profile);
 
 
+
 module.exports = router;
