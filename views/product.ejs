@@ -14,7 +14,9 @@
 
 
 	<div class="container products-wrapper">
+		<a href="/" class="btn btn-primary">Volver</a>
 		<div class="d-flex align-items-center">
+			
 			<h2 class="titulo-producto title"><%=resultados.nombre%></h2>
 			<p class="product-detail-description">
 
@@ -27,6 +29,7 @@
 				<a href="/edit/<%= resultados.id %>" class="btn btn-info">Editar</a>
 
 				<% } %> 
+				
 				<% if(locals.user){ %>	
 					<div class="Agregar">
 					<button type="submit">
