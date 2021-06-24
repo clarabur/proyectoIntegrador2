@@ -18,17 +18,18 @@
 					<div class="login-triangle"></div>
 					
 					<h2 class="login-header">AGREGAR PRODUCTO</h2>
-				  
-					<form class="login-container" action="/profile">
-						<p><input type="text" placeholder="Nombre del producto" required></p>
-						<p><input type="text" placeholder="Descripcion breve" required></p>
+
+				  <!--CAMBIAR EL ACTION-->
+					<form class="login-container" action="/profile" enctype="multipart/form-data" method="POST">
+						<p><input type="text" name= "nombre" placeholder="Nombre del producto" required></p>
+						<p><input type="text" name= "descripcion" placeholder="Descripcion breve" required></p>
 						<p><select name="categoria" class="categoria" required>
 								<option value="1">Categoría</option>
 								<option value="2">Verano</option>
 								<option value="3">Invierno</option>
 							</select></p>
-					  <p><textarea class="categoria" name="comment" form="usrform"required>
-					</textarea> </p>
+					<p><textarea class="categoria" name="comment" form="usrform"required></textarea> </p>
+					<p><input type="date" name= "lanzamiento" required> </p>
 					<p><input type="file" name="avatar" id="" required></p>
 					  <p><input type="submit" value="CARGAR PRODUCTO"></p>
 					</form>
