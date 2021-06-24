@@ -18,12 +18,12 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%=resultados.nombre%> 
-						<a href="/profile-edit/<%= resultados.id %> ">
 						
-							<i class="fas fa-cog"></i>
-						</a>
 						<% if(locals.user !== locals.user){ %>
+							<a href="/profile-edit/<%= locals.user.id %> ">
 						
+								<i class="fas fa-cog"></i>
+							</a>
 						<% } %> 
 					</h1>
 					<a class="btn mt-3 ml-4"  href="">SEGUIR</a>
