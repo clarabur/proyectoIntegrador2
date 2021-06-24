@@ -18,12 +18,42 @@
 				<div class="login">
 					
 					<h2 class="login-header">EDITAR MI PERFIL</h2>
-				  
-					<form class="login-container" action="/profile">
-					  <p><input type="text" placeholder="Nuevo usuario"required></p>
-					  <p><input type="password" placeholder="Contraseña" required></p>
-					  <p><a href="/profile"><input type="submit" value="CONFIRMAR CAMBIO"></a></p>
-					</form>
+					
+					<form class="login-container" action="/profile-edit" method="post">
+                        <p>
+                            <input type="hidden" placeholder="" name="id" value="<%= resultado.id %>">
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Nombre" name="nombre" value="<%= resultado.nombre %>">
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Apellido" name="apellido" value="<%= resultado.apellido %>">
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Mail" name="mail" value="<%= resultado.mail %>">
+                        </p>
+                        <p>
+                            <input type="number" placeholder="Telefono" name="telefono" value="<%= resultado.telefono %>">
+                        </p>
+                        <p>
+                            <input type="date" placeholder="Fecha" name="fecha" value="<%= resultado.fecha %>">
+                        </p>
+                        <p>
+                            <input type="text" placeholder="Crea un nuevo usuario" name="user" value="<%= resultado.user %>">
+                        </p>
+                        <p>
+                            <input type="password" placeholder="Crea una nueva contraseña" name="contraseña" >
+                        </p>
+                        <p>
+                            <input type="password" placeholder="Repite la contraseña" name="contraseña1" >
+                        </p>
+                        <p>
+                            <input type="file" placeholder="Imagen" name="avatar">
+                        </p>
+                        <p> 
+							<input class="botton" type="submit">
+						</p> 
+                    </form>
 				  </div>
 				</div>
 			</h2>

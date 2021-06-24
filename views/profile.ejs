@@ -18,9 +18,12 @@
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%=resultados.nombre%> 
-						<a href="/profile-edit">
+						<% if(locals.user !== locals.user){ %>
+						<a href="/profile-edit/<%= resultados.id %> ">
+						
 							<i class="fas fa-cog"></i>
 						</a>
+						<% } %> 
 					</h1>
 					<a class="btn mt-3 ml-4"  href="">SEGUIR</a>
 
@@ -43,9 +46,29 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title title">Mis Favoritos</h2>
+				<h2 class="products-title title">Mis Productos</h2>
 			</div>
 			<!-- Show mis productos -->
+			<% for(let i=0; i< resultados.producto.length; i+=1){  %>
+				
+			
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/detalle/<%=resultados.producto[i].id%>">
+							<figure class="product-box_image1">
+								<img src="<%=resultados.producto[i].image%>" alt="">
+							</figure>
+							<article class="product-box_data">
+								<h2><%=resultados.producto[i].nombre %></h2>
+								<p><%=resultados.producto[i].descripcion%></p>
+								<p></span>Creado por: <%= resultados.nombre %></span></p>
+		
+	 
+							</article>
+						</a>
+					</section>
+				</div>
+				<%}%>
 		
 		</div>
 	</div>

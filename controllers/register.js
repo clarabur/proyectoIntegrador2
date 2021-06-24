@@ -6,7 +6,7 @@ const op = db.sequelize.op
 let registerController = {
 
     register: (req, res)=>{
-        if (req.session.usuario != undefined){
+        if (req.session.user != undefined){
             return res.redirect('/')
         }else {
             return res.render ('register')
@@ -14,7 +14,7 @@ let registerController = {
      }, 
      store: (req, res) => {
        
-        let usuario = {
+        let user = {
             nombre: req.body.first_name,
             apellido: req.body.last_name,
             mail: req.body.email,
@@ -43,8 +43,8 @@ let registerController = {
         }  
         else {
             usuarios.findOne ({ where: [{ mail : req.body.email}]})
-            .then (usuario => {
-                if (usuario != null){
+            .then (user => {
+                if (user != null){
                     errors.message = "email ya existe"
                     res.locals.errors = errors;
                     return res.render('register');
@@ -53,7 +53,7 @@ let registerController = {
                     res.locals.errors = errors;
                     return res.render('register');
                 } else {
-                    let usuario = {
+                    let user = {
                        nombre: req.body.first_name,
                        apellido: req.body.last_name,
                         mail: req.body.email,
@@ -63,8 +63,8 @@ let registerController = {
                         user: req.body.user,
                         avatar: req.file.filename
                     }
-                    usuarios.create (usuario)
-                    .then ( usuario => {
+                    usuarios.create (user)
+                    .then ( user => {
                         return res.redirect ('/login')
                     })
 

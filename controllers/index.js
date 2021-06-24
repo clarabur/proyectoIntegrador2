@@ -16,7 +16,7 @@ let indexController = {
       order: [
         ['lanzamiento', 'DESC']
       ],
-    // limit: 5,
+   
     })
    
 
@@ -90,7 +90,7 @@ destroy: (req, res)=>{
 edit: (req, res)=>{
   let primaryKey = req.params.id;
   db.Producto.findByPk(primaryKey)
-      .then(resultados => res.render('product-edit', { resultados }))
+      .then(resultados => res.render('product-edit', { resultados: resultados }))
       .catch(err => console.log(err))
 }, 
 update: (req, res)=>{   
@@ -106,7 +106,9 @@ update: (req, res)=>{
   )
       .then(()=> res.redirect('/'))
       .catch(err => console.log(err))
-}
+},
+
+
 }
 
 module.exports = indexController;
