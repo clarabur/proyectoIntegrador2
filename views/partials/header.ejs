@@ -39,13 +39,13 @@
        
         <% if(locals.user){ %>
             
-            <li> <h2 class="main-header_credit-link">Hola: <%= user.nombre %> </h2> </li>
+            <li> <h2 class="main-header_credit-link">Hola: <%= locals.user.nombre%></h2> </li>
                 
                 
               <ul class="right-navbar">
 
 
-                <li><a href="/detalle/<%=resultados.id%>"> Mi Perfil <%=user.nombre%><i class="fas fa-user"></i>
+                <li><a href="/profile"> Mi Perfil <i class="fas fa-user"></i>
                     </a>
                 </li>
 

@@ -16,11 +16,12 @@ let indexController = {
       order: [
         ['lanzamiento', 'DESC']
       ],
-    // limit: 5,
+   
     })
    
 
-      .then(resultado => { res.render('index', { resultados: resultado })
+      .then(resultado => { 
+        res.render ('index', { resultados: resultado })
       })
 
   },
@@ -48,16 +49,13 @@ let indexController = {
       ],
       
       where: {
-          nombre: {[Op.like]: `%${buscadorProductos}%`}
-         
           
-          
+          [Op.or]: [
+            { nombre: {[Op.substring]: buscadorProductos} },
+            { descripcion: {[Op.substring]: buscadorProductos}}
+          ]
         },
 
-      where: {
-          descripcion: {[Op.like]: `%${buscadorProductos}%`}
-          
-        },
     })
     
     .then(resultados => res.render('search-results', {resultados: resultados}))

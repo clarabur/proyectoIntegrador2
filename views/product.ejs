@@ -30,18 +30,20 @@
 				<% if(locals.user){ %>	
 					<div class="Agregar">
 					<button type="submit">
-						<b> <a href="/profile">
-								<i class="fas fa-shopping-bag"></i>
-								<i>Agregar a mis compras</i>
-							</a></b> <br />
+						 <br />
 					</button>
 				</div>
 
 				<% } %> 
-
+				<b> <a href="/detalle/<%= resultados.id %>">
+					<i class="fas fa-shopping-bag"></i>
+					<i>Agregar a mis compras</i>
+				</a></b>
 			</p>
 		</div>
-		
+		<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
+			<button class="btn btn-danger" type="submit">Borrar</button>
+		</form> 
 	   
 		<div class="product-detail">
 			<div class="row">

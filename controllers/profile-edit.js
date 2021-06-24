@@ -18,9 +18,10 @@ let profileeditController = {
             telefono: req.body.phone,
             fecha: req.body.date,
             user: req.body.user,
-            contraseña:bcrypt.hashSync(req.body.password),
-            avatar: req.body.avatar,
-        },{where: {id:req.body.id}}) .then (resultado => {
+            contraseña: bcrypt.hashSync(req.body.password),
+            avatar: req.file.avatar,
+        },
+        {where: {id:req.body.id}}) .then (resultado => {
             res.redirect ("/profile/detalle/" + resultado.id)
         }) 
     }
