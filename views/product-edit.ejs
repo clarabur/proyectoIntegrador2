@@ -16,18 +16,26 @@
 			<h2 class="col-12"> 
 				<div class="login">
 					<div class="login-triangle"></div>
-                    <h2 class="login-header">Editando el producto <%= resultados.nombre %></h2>
+                    <h2 class="login-header">Editar el producto <%= resultados.nombre %></h2>
+                    
 
-
-<form class="login-container" action="/edit/<%=resultados.id%>" method="POST">
-    <p>
+<form class="login-container" action="/edit/<%=resultados.id%>" method="POST" enctype="multipart/form-data" >
+    <p> nombre:
         <input type="text"  value="<%= resultados.nombre %>" class="form-control"  name="nombre" placeholder="nombre">
     </p>
-    <p>
-        <input type="text"  class="form-control"  name="nombre" placeholder="comentario">
-    <p>
-        <input type="file"  name="image" id="">
+    <p> descripcion:
+        <input type="text"  value="<%= resultados.descripcion %>" class="form-control"  name="descripcion" placeholder="descripcion"> </p>
+        <p> lanzamiento:
+            <input type="text"  value="<%= resultados.lanzamiento %>" class="form-control"  name="lanzamiento" placeholder="lanzamiento">
+        </p>
+        
+        <p> temporada:
+            <input type="text"  value="<%= resultados.temporada %>" class="form-control"  name="temporada" placeholder="temporada">
+        </p>
+        <p> imagen del producto:
+            <input type="file" name="image" id="" required>
     </p>
+   
 
     <button type="submit" class="btn btn-primary">Guardar</button>
 

@@ -23,6 +23,6 @@ router.get('/add', indexController.add);
 router.post('/add', upload.single('avatar'), indexController.storeProduct);
 router.get('/borrar/:id', indexController.borrar);
 router.get('/edit/:id', indexController.edit) //muestra el formulario de creacion
-router.post('/edit/:id', indexController.update) //procesa la info
+router.post('/edit/:id', upload.single('image'),indexController.update) //procesa la info
 
 module.exports = router;

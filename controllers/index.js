@@ -112,35 +112,43 @@ storeProduct: (req,res) => {
   .catch(err => console.log (err))
 
 },
+//EDITAR PRODUCTO
 
-edit: (req, res)=>{
+edit: (req, res, next)=> {
   let primaryKey = req.params.id;
   db.Producto.findByPk(primaryKey)
-      .then(resultados => res.render('product-edit', { resultados: resultados }))
+      .then(resultado => {
+                res.render('product-edit', { resultados: resultado })})
       .catch(err => console.log(err))
-}, 
+      
+    }, 
 
 update: (req, res)=>{   
   let primaryKey = req.params.id;
-  let productoActualizar = req.body
-  /* if (req.session.user !=  locals.user){
-    errors.message = "email ya existe"
-    res.locals.errors = errors;
-  return res.render('/');
-    
-  } */
-  db.Producto.update(
-    productoActualizar,
-    {
-        where: [{
-            id: primaryKey
-        }]
+  db.Producto.findByPk(primaryKey)
+  .then (resultado => {
+    let productoAGuardar = {
+      
+      nombre: req.body.nombre,
+      descripcion: req.body.descripcion,
+      lanzamiento: req.body.lanzamiento,
+      temporada: req.body.temporada,
+      image: `/images/products/${req.file.filename}`,
+     
     }
-)
-.then(()=> res.redirect('/product'))
-  
+     
+     db.Producto.update(productoAGuardar, {
+      where: [{
+          id: primaryKey
+      }]
+  })
+  .then(()=> res.redirect('/detalle/' + resultado.id))
 
-      .catch(err => console.log(err))
+  })
+ .catch((error) => {
+  console.log ('error de conexion: ' + error.menssage)
+  res.render ('error', { error: "Error de conexion: " + error.message})
+})
 },
 
 
