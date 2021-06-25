@@ -66,7 +66,7 @@ let indexController = {
         })
     },
     
-    
+    //BORRAR PRODUCTO
   borrar: (req, res)=>{
     let primaryKey = req.params.id;
     db.Producto.destroy({
@@ -86,7 +86,10 @@ destroy: (req, res)=>{
       }]
   })
   .then(()=> res.redirect('/'))
-  .catch(err=> console.log(err))
+  .catch((error) => {
+   // console.log ('error de conexion: ' + error.menssage)
+    res.render ('error', { error: "Error de conexion: " + error.message})
+  })
 },
 
 //AGREGAR PRODUCTO
@@ -146,7 +149,7 @@ update: (req, res)=>{
 
   })
  .catch((error) => {
-  console.log ('error de conexion: ' + error.menssage)
+ // console.log ('error de conexion: ' + error.menssage)
   res.render ('error', { error: "Error de conexion: " + error.message})
 })
 },
