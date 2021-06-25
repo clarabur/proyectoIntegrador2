@@ -19,8 +19,8 @@
 					
 					<h2 class="login-header">AGREGAR PRODUCTO</h2>
 
-				  <!--CAMBIAR EL ACTION-->
-					<form class="login-container" action="/profile" enctype="multipart/form-data" method="POST">
+
+					<form class="login-container" action="/add" enctype="multipart/form-data" method="POST">
 						<p><input type="text" name= "nombre" placeholder="Nombre del producto" required></p>
 						<p><input type="text" name= "descripcion" placeholder="Descripcion breve" required></p>
 						<p><select name="categoria" class="categoria" required>
@@ -30,7 +30,10 @@
 							</select></p>
 					<p><textarea class="categoria" name="comment" form="usrform"required></textarea> </p>
 					<p><input type="date" name= "lanzamiento" required> </p>
+					
 					<p><input type="file" name="avatar" id="" required></p>
+					
+					
 					  <p><input type="submit" value="CARGAR PRODUCTO"></p>
 					</form>
 				</div>
