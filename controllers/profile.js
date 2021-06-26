@@ -1,6 +1,6 @@
-var detalleProducto = require("../data/products")
-const db = require('../database/models')
 
+const db = require('../database/models')
+const bcrypt = require ('bcryptjs')
 const usuarios = db.Usuario
 
 const op = db.sequelize.Op

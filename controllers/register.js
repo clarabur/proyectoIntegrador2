@@ -1,7 +1,7 @@
 const db = require ('../database/models')
 const usuarios = db.Usuario
 const bcrypt = require ('bcryptjs')
-const op = db.sequelize.op
+//const op = db.sequelize.op
 
 let registerController = {
 

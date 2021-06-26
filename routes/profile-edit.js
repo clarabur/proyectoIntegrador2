@@ -18,7 +18,7 @@ var storage = multer.diskStorage({
   var upload = multer({ storage: storage })
 
 router.get('/:id', profileeditController.edit)
-router.post ('/', upload.single('avatar'),profileeditController.profileEdit)
+router.post('/:id', upload.single('avatar'),profileeditController.profileEdit)
 
 
 module.exports = router;
