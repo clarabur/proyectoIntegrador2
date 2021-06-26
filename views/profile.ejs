@@ -19,12 +19,15 @@
 				<div class="d-flex align-items-center ">
 					<h1 class="main-title"> <%=resultados.nombre%> 
 						
-						<% if(locals.user !== locals.user){ %>
+						<% if(locals.user.id == resultados.id){ %>
 							<a href="/profile-edit/<%= locals.user.id %> ">
 						
 								<i class="fas fa-cog"></i>
 							</a>
-						<% } %> 
+						<% }   %> 
+
+						
+					
 					</h1>
 					<a class="btn mt-3 ml-4"  href="">SEGUIR</a>
 

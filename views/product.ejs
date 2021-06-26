@@ -22,16 +22,18 @@
 
 				
 				
-				<% if(locals.user == locals.user){ %>
-				<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
-					<button class="btn btn-danger" type="submit">Borrar</button>
-					
-				</form> 
-				<a href="/edit/<%= resultados.id %>" class="btn btn-info">Editar</a>
-				
-				
+				<% if(locals.user.id == resultados.usuario_id ){ %>
+					<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
+						<button class="btn btn-danger" type="submit">Borrar</button>
+						
+					</form> 
+					<a href="/edit/<%= resultados.id %>" class="btn btn-info">Editar</a>
 
-				<% } %> 
+				<% }  %>
+     
+				
+				
+      
 				
 				<% if(locals.user){ %>	
 					<div class="Agregar">
