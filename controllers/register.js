@@ -22,7 +22,7 @@ let registerController = {
             fecha: req.body.date,
             user: req.body.user,
             contraseña:bcrypt.hashSync(req.body.password),  
-            avatar: req.body.avatar,
+            avatar:`/images/users/${req.file.filename}` ,
         }
         let errors = {};
 
