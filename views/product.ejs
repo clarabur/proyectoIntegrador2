@@ -22,20 +22,14 @@
 
 				
 				
-				<% if(locals.user.id == resultados.usuario_id ){ %>
-					<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
-						<button class="btn btn-danger" type="submit">Borrar</button>
-						
-					</form> 
-					<a href="/edit/<%= resultados.id %>" class="btn btn-info">Editar</a>
+				
 
-				<% }  %>
 	   	
 				
 				
 	  			
 				
-				<% if(locals.user){ %>	
+				<% if(locals.user){ %>		
 					<div class="Agregar">
 					<button type="submit">
 						<b> <a href="/profile/detalle/<%= locals.user.id %>">
@@ -46,6 +40,17 @@
 							</a></b> <br />
 					</button>
 					</div>
+					<%	if  (locals.user.id == resultados.usuario_id ){ %>
+						<a href="/edit/<%= resultados.id %>" class="btn btn-danger">Editar</a>
+
+						<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
+							<button class="btn btn-danger" type="submit">Borrar</button>	
+						</form> 
+						
+					
+						
+						<% } %> 
+					
 				<% } %> 
 				
 			</p>
