@@ -38,7 +38,7 @@ let indexController = {
             association: 'usuario'
           }],
         }],
-        order: ['comentario', 'DESC']
+        order: ['comentario', 'createAt', 'DESC']
       })
       
       .then(resultados =>  res.render('product', {resultados }))
