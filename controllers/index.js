@@ -41,6 +41,7 @@ let indexController = {
        // order: ['comentario', 'createAt', 'DESC']
       })
       
+      
       .then(resultados =>  res.render('product', {resultados }))
       .catch((err) => `Error: ${err}`)
      
