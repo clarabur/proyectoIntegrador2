@@ -134,9 +134,17 @@ update: (req, res)=>{
       
       nombre: req.body.nombre,
       descripcion: req.body.descripcion,
+      temporada: req.body.categoria,
+      lanzamiento: req.body.lanzamiento,
+      image:`/images/products/${req.file.filename}`,
+      usuario_id: req.session.user.id,
+
+      
+      /*nombre: req.body.nombre,
+      descripcion: req.body.descripcion,
       lanzamiento: req.body.lanzamiento,
       temporada: req.body.temporada,
-      image: `/images/products/${req.file.filename}`,
+      image: `/images/products/${req.file.filename}`,*/
      
     }
      
