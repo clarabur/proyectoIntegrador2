@@ -199,6 +199,7 @@ hr {
   background-size: cover;
   background-position: center center;
   height: 100px;
+  margin-bottom: 260px;
 }
 
 .banner .uk{
@@ -209,20 +210,18 @@ hr {
 .banner img {
   width: 100%;
   height: 100px;
+  
 }
 
 
 
 /*====== Products ======*/
 .products-wrapper {
-  margin-top: 260px;
+  margin-top: 30px;
   margin-bottom: 30px;
+  
 }
 
-.products-wrapper1 {
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
 
 .products-title {
   font-size: 2.4em;
@@ -243,11 +242,6 @@ hr {
   font-style: bolder;
 }
 
-.products-wrapper1 h2 {
-  font-family: inherit;
-  font-weight: 500;
-  font-style: bolder;
-}
 
 .product-box {
   background-color: #ffffff;
@@ -259,6 +253,7 @@ hr {
 
 .product-box a {
   display: block;
+  text-decoration: none;
 }
 
 .product-box_image {
