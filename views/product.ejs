@@ -17,16 +17,8 @@
 			
 			<h2 class="titulo-producto title"><%=resultados.nombre%></h2>
 			<p class="product-detail-description">
-
 				
-				
-				
-
-	   	
-				
-				
-	  			
-				
+				<!--BOTON DE AGREGAR PRODUCTO-->
 				<% if(locals.user){ %>		
 					<div class="Agregar">
 					<button type="submit">
@@ -38,14 +30,14 @@
 							</a></b> <br />
 					</button>
 					</div>
+				
+				<!--BOTON DE EDITAR PRODUCTO-->
 					<%	if  (locals.user.id == resultados.usuario_id ){ %>
 						<a href="/edit/<%= resultados.id %>" class="btn btn-danger">Editar</a>
 
 						<form style="display: inline;" action="/detalle/<%=resultados.id %>" method="POST">
 							<button class="btn btn-danger" type="submit">Borrar</button>	
 						</form> 
-						
-					
 						
 						<% } %> 
 					
@@ -80,13 +72,19 @@
 						</article>
 						<% }) %>
 						 
-						<% if(locals.user){ %>	
+
+						<% if (locals.user){%>
+					
 							<form class="form" action="/" method="GET">
 								<input id="comentario" type="text" value="" placeholder="Agregar comentario">
 								<button id="boton-agregar" type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 							</form>
-							<% } %> 
-						
+							<% } else {%>
+								<form class="form" action="/login" method="GET">
+									<input id="comentario" type="text" value="" placeholder="Agregar comentario">
+									<button id="boton-agregar" type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+								</form>
+								<%  }%>
 					</div>
 					
 			</div>
