@@ -38,7 +38,7 @@ let indexController = {
             association: 'usuario'
           }],
         }],
-       // order: ['comentario', 'createAt', 'DESC']
+        order: [['comentario', 'createdAt', 'DESC']]
       })
       
       
