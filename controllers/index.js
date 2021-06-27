@@ -29,7 +29,16 @@ let indexController = {
   show: (req, res) => {
     let primaryKey = req.params.id;
     db.Producto.findByPk(primaryKey, {
-        include: [{ association: 'comentario', include: [{ association: 'usuario'}] }, { association: 'usuario' }]
+        include: [{ 
+          association: 'usuario'
+        
+        }, {
+          association: 'comentario', 
+          include: [{ 
+            association: 'usuario'
+          }],
+        }],
+        order: ['comentario', 'DESC']
       })
       
       .then(resultados =>  res.render('product', {resultados }))
@@ -134,9 +143,10 @@ update: (req, res)=>{
       
       nombre: req.body.nombre,
       descripcion: req.body.descripcion,
+      temporada: req.body.categoria,
       lanzamiento: req.body.lanzamiento,
-      temporada: req.body.temporada,
-      image: `/images/products/${req.file.filename}`,
+      image:`/images/products/${req.file.filename}`,
+      usuario_id: req.session.user.id,
      
     }
      
