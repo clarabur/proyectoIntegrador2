@@ -28,10 +28,27 @@ let profileController = {
 
   },
   editarPerfil: (req, res) => {
-    db.Usuario.findByPk (req.params.id)
-.then (resultado => {
-  res.render('profile-edit', {resultado: resultado})
-})
+    
+  if (req.session.user != null ){
+    //return //res.send('hola')
+    if(req.session.user.id == req.params.id){
+      db.Usuario.findByPk (req.params.id)
+      .then (resultado => {
+        res.render('profile-edit', {resultado: resultado}) 
+        
+      })
+    }else {
+      return res.redirect ('/')
+    }
+  }   else{
+    return res.redirect ('/')
+  }
+   
+    
+  
+      
+    
+    
 
   },
 
