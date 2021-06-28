@@ -75,8 +75,8 @@
 
 						<% if (locals.user){%>
 					
-							<form class="form" action="/" method="GET">
-								<input id="comentario" type="text" value="" placeholder="Agregar comentario">
+							<form class="form" action="/detalle/<%= resultados.id %>"  method="GET">
+								<input id="comentario" type="text" value="" placeholder="Agregar comentario" name="comentario">
 								<button id="boton-agregar" type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 							</form>
 							<% } else {%>
