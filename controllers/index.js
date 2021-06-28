@@ -136,10 +136,14 @@ edit: (req, res, next)=> {
       
     }, 
 
-update: (req, res)=>{   
+update: (req, res)=>{  
+  
+  let user_add = req.session.user.id
+  
   let primaryKey = req.params.id;
   db.Producto.findByPk(primaryKey)
   .then (resultado => {
+
     let productoAGuardar = {
       
       nombre: req.body.nombre,
@@ -150,7 +154,8 @@ update: (req, res)=>{
       usuario_id: req.session.user.id,
      
     }
-     
+    
+   
      db.Producto.update(productoAGuardar, {
       where: [{
           id: primaryKey
@@ -158,7 +163,9 @@ update: (req, res)=>{
   })
   .then(()=> res.redirect('/detalle/' + resultado.id))
 
-  })
+    })
+  
+   
  .catch((error) => {
  // console.log ('error de conexion: ' + error.menssage)
   res.render ('error', { error: "Error de conexion: " + error.message})
