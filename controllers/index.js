@@ -172,6 +172,16 @@ update: (req, res)=>{
 })
 },
 
+addComentario: (req,res)=>{
+  let comentario ={
+  comentario: req.body.comentario
+  }
+
+  db.Comentario.create (comentario)
+  .then(() => res.redirect ('/'))
+  .catch(err => console.log (err))
+},
+
 
 }
 

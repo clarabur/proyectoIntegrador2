@@ -187,3 +187,13 @@ body{
 .logout {
   color: white;
  }
+
+ a  {
+  text-decoration: none;
+}
+
+.frase {
+  font-size: 15px;
+  color: white;
+  margin-left: 65px;
+}
