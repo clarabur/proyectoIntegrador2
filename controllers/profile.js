@@ -29,14 +29,6 @@ let profileController = {
   },
   editarPerfil: (req, res) => {
     
-
-   
-
-
-
-
-
-
   if (req.session.user != null ){
     //return //res.send('hola')
     if(req.session.user.id == req.params.id){

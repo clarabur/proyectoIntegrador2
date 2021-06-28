@@ -105,7 +105,13 @@ destroy: (req, res)=>{
 //AGREGAR PRODUCTO
 
 add: (req,res) => {
-  return res.render ('product-add')
+  if (req.session.user == null){
+    return res.redirect('/')
+}else {
+    return res.render ('product-add')
+} 
+   
+  
 },
 
 storeProduct: (req,res) => {
@@ -128,17 +134,23 @@ storeProduct: (req,res) => {
 //EDITAR PRODUCTO
 
 edit: (req, res, next)=> {
-  let primaryKey = req.params.id;
+  if (req.session.user == null ){
+    return res.redirect ('/')
+    
+  
+    }else {
+      
+      let primaryKey = req.params.id;
   db.Producto.findByPk(primaryKey)
       .then(resultado => {
                 res.render('product-edit', { resultados: resultado })})
-      .catch(err => console.log(err))
       
+  }  
+
+ 
     }, 
 
 update: (req, res)=>{  
-  
-  let user_add = req.session.user.id
   
   let primaryKey = req.params.id;
   db.Producto.findByPk(primaryKey)
