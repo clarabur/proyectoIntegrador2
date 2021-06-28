@@ -135,7 +135,7 @@ storeProduct: (req,res) => {
 
 edit: (req, res, next)=> {
   if (req.session.user == null ){
-    return res.redirect ('/')
+    return res.redirect ('/login')
     
   
     }else {
@@ -143,7 +143,7 @@ edit: (req, res, next)=> {
       let primaryKey = req.params.id;
   db.Producto.findByPk(primaryKey)
       .then(resultado => {
-                res.render('product-edit', { resultados: resultado })})
+     res.render('product-edit', { resultados: resultado })})
       
   }  
 
