@@ -24,5 +24,6 @@ router.post('/add', upload.single('avatar'), indexController.storeProduct);
 router.get('/borrar/:id', indexController.borrar);
 router.get('/edit/:id', indexController.edit) //muestra el formulario de creacion
 router.post('/edit/:id', upload.single('image'),indexController.update) //procesa la info
+router.post ('/comment', indexController.addComentario);
 
 module.exports = router;

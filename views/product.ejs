@@ -61,7 +61,7 @@
 					<section class="comments">
 						<% resultados.comentario.forEach(comment => { %>
 						<article>
-							<img src="<%= comment.usuario.avatar%> " alt="Foto de usuario">
+							<img src="/images/<%= comment.usuario.avatar%> " alt="Foto de usuario">
 							<div class="data">
 								<p class="user">
 									<strong> <a
@@ -71,12 +71,14 @@
 				</div>
 						</article>
 						<% }) %>
-						 
+						
+
 
 						<% if (locals.user){%>
 					
-							<form class="form" action="/detalle/<%= resultados.id %>"  method="GET">
+							<form class="form" action="/comment"  method="POST">
 								<input id="comentario" type="text" value="" placeholder="Agregar comentario" name="comentario">
+								<input type="hidden" name="id" value="<%=resultados.id%>">
 								<button id="boton-agregar" type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 							</form>
 							<% } else {%>
@@ -86,7 +88,7 @@
 								</form>
 								<%  }%>
 					</div>
-					
+	
 			</div>
 			
 		</div>

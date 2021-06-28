@@ -76,7 +76,7 @@ let indexController = {
         })
     },
     
-    //BORRAR PRODUCTO
+//BORRAR PRODUCTO
   borrar: (req, res)=>{
     let primaryKey = req.params.id;
     db.Producto.destroy({
@@ -125,6 +125,7 @@ storeProduct: (req,res) => {
   .catch(err => console.log (err))
 
 },
+
 //EDITAR PRODUCTO
 
 edit: (req, res, next)=> {
@@ -165,15 +166,20 @@ update: (req, res)=>{
 })
 },
 
+//AGREGAR COMENTARIO
 addComentario: (req,res)=>{
-  let comentario ={
-  comentario: req.body.comentario
-  }
+let comentario = {
+          comentario: req.body.comentario,
+          usuario_id: req.session.user.id,
+          producto_id: req.body.id,
+          
+      }
+      db.Comentario.create (comentario)
+      .then (() => 
+      res.redirect(`/detalle/${req.body.id}`))
+  },
 
-  db.Comentario.create (comentario)
-  .then(() => res.redirect ('/'))
-  .catch(err => console.log (err))
-},
+
 
 
 }
