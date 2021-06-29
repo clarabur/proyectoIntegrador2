@@ -135,18 +135,25 @@ storeProduct: (req,res) => {
 //EDITAR PRODUCTO
 
 edit: (req, res, next)=> {
-  if (req.session.user == null ){
-    return res.redirect ('/login')
-    
-  
-    }else {
+  if (req.session.user != null){
+    let id = req.params.id
+    db.Producto.findOne({
+      where: [{id: req.params.id, usuario_id: req.session.user.id }]
+    })
+    .then(producto => {
+      if (producto != null){
+        return res.render('product-edit', {
+          producto,
+          id
+        })
       
-      let primaryKey = req.params.id;
-  db.Producto.findByPk(primaryKey)
-      .then(resultado => {
-     res.render('product-edit', { resultados: resultado })})
-      
-  }  
+      }  else {
+        return res.redirect('/')
+      }
+      })
+  }else {
+    return res.redirect('/')
+  }
 
  
     }, 

@@ -16,15 +16,15 @@
 			<h2 class="col-12"> 
 				<div class="login">
 					<div class="login-triangle"></div>
-                    <h2 class="login-header">EDITAR PRODUCTO <%= resultados.nombre %></h2>
+                    <h2 class="login-header">EDITAR PRODUCTO <%= producto.nombre %></h2>
                     
 
-<form class="login-container" action="/edit/<%=resultados.id%>" method="POST" enctype="multipart/form-data" >
+<form class="login-container" action="/edit/<%=producto.id%>" method="POST" enctype="multipart/form-data" >
     <p> Nombre del producto:
-        <input type="text"  value="<%= resultados.nombre %>" class="form-control"  name="nombre" placeholder="nombre">
+        <input type="text"  value="<%= producto.nombre %>" class="form-control"  name="nombre" placeholder="nombre">
     </p>
     <p> Descripcion breve:
-        <input type="text"  value="<%= resultados.descripcion %>" class="form-control"  name="descripcion" placeholder="descripcion"> </p>
+        <input type="text"  value="<%= producto.descripcion %>" class="form-control"  name="descripcion" placeholder="descripcion"> </p>
 
         <p><select name="categoria" class="categoria" required>
             <option value="1">Categoría</option>
@@ -36,7 +36,7 @@
         <p><textarea class="categoria" name="comment" form="usrform"required></textarea> </p>
 
         <p>
-            <input type="text"  value="<%= resultados.lanzamiento %>" class="form-control"  name="lanzamiento" placeholder="lanzamiento">
+            <input type="text"  value="<%= producto.lanzamiento %>" class="form-control"  name="lanzamiento" placeholder="lanzamiento">
         </p>
 
         <p> 
